@@ -1,6 +1,7 @@
 .container {
   position: fixed;
   width: 100vw;
+  color: white;
 }
 .containerNav {
   display: flex;
@@ -28,6 +29,7 @@
 }
 .containerLi:hover {
   border-bottom: 2px solid var(--color-white);
+  cursor: pointer;
 }
 
 .btn {

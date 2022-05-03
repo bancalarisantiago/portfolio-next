@@ -1,14 +1,21 @@
-//Assets
-import logo from '../../assets/1x/Asset 1.png';
+//Framework
+import Image from 'next/image';
+
 //Styles
 import styles from './Header.module.css';
+
 const Header: React.FC = () => {
   return (
     <>
       <header className={styles.container}>
         <nav className={styles.containerNav}>
           <div>
-            <img className={styles.logo} src={logo} alt='logo-saba'></img>
+            <Image
+              className={styles.logo}
+              layout='fill'
+              src={'/src/assets/images/logo.png'}
+              alt='logo-saba'
+            />
           </div>
           <div>
             <ul className={styles.containerLinks}>
