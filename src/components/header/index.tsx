@@ -1,3 +1,5 @@
+//Assets
+import Logo from '../../assets/images/logo.png';
 //Framework
 import Image from 'next/image';
 
@@ -12,8 +14,10 @@ const Header: React.FC = () => {
           <div>
             <Image
               className={styles.logo}
-              layout='fill'
-              src={'/src/assets/images/logo.png'}
+              layout='fixed'
+              width={200}
+              height={100}
+              src={Logo}
               alt='logo-saba'
             />
           </div>

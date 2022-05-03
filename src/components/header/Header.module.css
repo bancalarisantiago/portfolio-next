@@ -1,12 +1,14 @@
 .container {
+  margin: 0 10px;
+  display: flex;
   position: fixed;
-  width: 100vw;
+  justify-content: space-around;
+  width: 95%;
   color: white;
 }
 .containerNav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 .containerLinks {
   display: flex;
@@ -36,4 +38,8 @@
   background-color: transparent;
   border-style: none;
   border: 2px solid var(--color-white);
+}
+
+.btn:hover {
+  background-color: var(--color-white);
 }

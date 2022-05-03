@@ -1,3 +1,6 @@
+:root {
+  --color-white: #fafafa;
+}
 html,
 body {
   padding: 0;
