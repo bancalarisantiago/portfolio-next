@@ -5,10 +5,11 @@ import Image from 'next/image';
 
 //Styles
 import styles from './Header.module.css';
+import Link from 'next/link';
 
 const Header: React.FC = () => {
   return (
-    <>
+    <div>
       <header className={styles.container}>
         <nav className={styles.containerNav}>
           {/* <div>
@@ -24,20 +25,20 @@ const Header: React.FC = () => {
           <div>
             <ul className={styles.containerLinks}>
               <div className={styles.containerLi}>
-                <li>
-                  <a href='/home'>Home</a>
-                </li>
+                <Link href='/home'>
+                  <a>Home</a>
+                </Link>
+              </div>
+              <div className={styles.containerLi}>
+                <Link href='/home'>
+                  <a>Projects</a>
+                </Link>
               </div>
               <div className={styles.containerLi}>
                 <li>
-                  <a className={styles.link} href='#'>
-                    About me
-                  </a>
-                </li>
-              </div>
-              <div className={styles.containerLi}>
-                <li>
-                  <a href='#'>Projects</a>
+                  <Link href='/projects'>
+                    <a>Projects</a>
+                  </Link>
                 </li>
               </div>
               <div className={styles.containerLi}>
@@ -50,7 +51,7 @@ const Header: React.FC = () => {
           <div></div>
         </nav>
       </header>
-    </>
+    </div>
   );
 };
 
