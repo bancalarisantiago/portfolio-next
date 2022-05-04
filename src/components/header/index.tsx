@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     <>
       <header className={styles.container}>
         <nav className={styles.containerNav}>
-          <div>
+          {/* <div>
             <Image
               className={styles.logo}
               layout='fixed'
@@ -20,31 +20,34 @@ const Header: React.FC = () => {
               src={Logo}
               alt='logo-saba'
             />
-          </div>
+          </div> */}
           <div>
             <ul className={styles.containerLinks}>
               <div className={styles.containerLi}>
                 <li>
-                  <a href='#'>HOME</a>
+                  <a href='/home'>Home</a>
                 </li>
               </div>
               <div className={styles.containerLi}>
                 <li>
-                  <a href='#'>ABOUT ME</a>
+                  <a className={styles.link} href='#'>
+                    About me
+                  </a>
                 </li>
               </div>
               <div className={styles.containerLi}>
                 <li>
-                  <a href='#'>PROJECTS</a>
+                  <a href='#'>Projects</a>
                 </li>
               </div>
-              <div>
-                <button className={styles.btn}>
-                  <a href='#'>CONTACT</a>
-                </button>
+              <div className={styles.containerLi}>
+                <li>
+                  <a href='#'>Contact</a>
+                </li>
               </div>
             </ul>
           </div>
+          <div></div>
         </nav>
       </header>
     </>

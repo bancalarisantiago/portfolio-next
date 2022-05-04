@@ -4,7 +4,9 @@ import Home from '../components';
 const HomePage: NextPage = () => {
   return (
     <>
-      <Home />
+      <div>
+        <Home />
+      </div>
     </>
   );
 };
