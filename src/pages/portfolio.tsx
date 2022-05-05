@@ -1,11 +1,15 @@
+import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import Layout from '../components/layout';
+import Header from '../components/header';
+
 import Portfolio from '../components/portfolio';
 
 const PortfolioPage: NextPage = () => {
+  const router = useRouter();
+  const path = router.pathname;
   return (
     <>
-      <Layout />
+      <Header activeLink={path} />
       <Portfolio />
     </>
   );

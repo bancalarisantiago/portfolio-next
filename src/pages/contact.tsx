@@ -1,11 +1,15 @@
+import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import Layout from '../components/layout';
+
 import Contact from '../components/contact';
+import Header from '../components/header';
 
 const ContactPage: NextPage = () => {
+  const router = useRouter();
+  const path = router.pathname;
   return (
     <>
-      <Layout />
+      <Header activeLink={path} />
       <Contact />
     </>
   );

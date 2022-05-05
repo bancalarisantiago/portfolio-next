@@ -23,3 +23,7 @@
 .containerLinks {
   display: flex;
 }
+
+.active {
+  color: var(--color-yellow);
+}

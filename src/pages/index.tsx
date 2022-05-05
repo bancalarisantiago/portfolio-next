@@ -1,11 +1,14 @@
 import type { NextPage } from 'next';
 
-import Layout from '../components/layout';
 import Landing from '../components/landing';
+import { useRouter } from 'next/router';
+import Header from '../components/header';
 const HomePage: NextPage = () => {
+  const router = useRouter();
+  const path = router.pathname;
   return (
     <>
-      <Layout />
+      <Header activeLink={path} />
       <Landing />
     </>
   );
