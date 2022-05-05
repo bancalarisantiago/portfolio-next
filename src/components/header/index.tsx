@@ -9,10 +9,9 @@ import Link from 'next/link';
 
 const Header: React.FC = () => {
   return (
-    <div>
-      <header className={styles.container}>
-        <nav className={styles.containerNav}>
-          {/* <div>
+    <header className={styles.container}>
+      <nav className={styles.containerNav}>
+        {/* <div>
             <Image
               className={styles.logo}
               layout='fixed'
@@ -22,38 +21,33 @@ const Header: React.FC = () => {
               alt='logo-saba'
             />
           </div> */}
-          <div>
-            <ul className={styles.containerLinks}>
-              <div className={styles.containerLi}>
-                <Link href='/'>
-                  <a>Home</a>
-                </Link>
-              </div>
-              <div className={styles.containerLi}>
-                <Link href='/about'>
-                  <a>About</a>
-                </Link>
-              </div>
-              <div className={styles.containerLi}>
-                <li>
-                  <Link href='/portfolio'>
-                    <a>Portfolio</a>
-                  </Link>
-                </li>
-              </div>
-              <div className={styles.containerLi}>
-                <li>
-                  <Link href='/contact'>
-                    <a href='#'>Contact</a>
-                  </Link>
-                </li>
-              </div>
-            </ul>
+        <div className={styles.containerLinks}>
+          <div className={styles.containerLi}>
+            <Link href='/'>
+              <a>Home</a>
+            </Link>
           </div>
-          <div></div>
-        </nav>
-      </header>
-    </div>
+          <div className={styles.containerLi}>
+            <Link href='/about'>
+              <a>About</a>
+            </Link>
+          </div>
+          <div className={styles.containerLi}>
+            <Link href='/portfolio'>
+              <a>Portfolio</a>
+            </Link>
+          </div>
+          <div className={styles.containerLi}>
+            <Link href='/contact'>
+              <a href='#'>Contact</a>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.btnLogin}>
+          <button>LOGIN</button>
+        </div>
+      </nav>
+    </header>
   );
 };
 
