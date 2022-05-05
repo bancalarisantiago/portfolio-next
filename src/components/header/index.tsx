@@ -25,25 +25,27 @@ const Header: React.FC = () => {
           <div>
             <ul className={styles.containerLinks}>
               <div className={styles.containerLi}>
-                <Link href='/home'>
+                <Link href='/'>
                   <a>Home</a>
                 </Link>
               </div>
               <div className={styles.containerLi}>
-                <Link href='/home'>
-                  <a>Projects</a>
+                <Link href='/about'>
+                  <a>About</a>
                 </Link>
               </div>
               <div className={styles.containerLi}>
                 <li>
-                  <Link href='/projects'>
-                    <a>Projects</a>
+                  <Link href='/portfolio'>
+                    <a>Portfolio</a>
                   </Link>
                 </li>
               </div>
               <div className={styles.containerLi}>
                 <li>
-                  <a href='#'>Contact</a>
+                  <Link href='/contact'>
+                    <a href='#'>Contact</a>
+                  </Link>
                 </li>
               </div>
             </ul>
