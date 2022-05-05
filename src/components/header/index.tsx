@@ -7,7 +7,12 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 import Link from 'next/link';
 
-const Header: React.FC = () => {
+interface Props {
+  activeLink?: string;
+}
+
+const Header: React.FC<Props> = ({ activeLink }) => {
+  console.log('header', activeLink);
   return (
     <header className={styles.container}>
       <nav className={styles.containerNav}>
@@ -24,22 +29,28 @@ const Header: React.FC = () => {
         <div className={styles.containerLinks}>
           <div className={styles.containerLi}>
             <Link href='/'>
-              <a>Home</a>
+              <a className={activeLink === '/' ? styles.active : ''}>Home</a>
             </Link>
           </div>
           <div className={styles.containerLi}>
             <Link href='/about'>
-              <a>About</a>
+              <a className={activeLink === '/about' ? styles.active : ''}>
+                About
+              </a>
             </Link>
           </div>
           <div className={styles.containerLi}>
             <Link href='/portfolio'>
-              <a>Portfolio</a>
+              <a className={activeLink === '/portfolio' ? styles.active : ''}>
+                Portfolio
+              </a>
             </Link>
           </div>
           <div className={styles.containerLi}>
             <Link href='/contact'>
-              <a href='#'>Contact</a>
+              <a className={activeLink === '/contact' ? styles.active : ''}>
+                Contact
+              </a>
             </Link>
           </div>
         </div>
