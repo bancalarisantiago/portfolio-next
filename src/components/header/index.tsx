@@ -2,17 +2,24 @@
 import Logo from '../../assets/images/logo.png';
 //Framework
 import Image from 'next/image';
-
+//Component
+import LogIn from '../login';
 //Styles
 import styles from './Header.module.css';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface Props {
-  activeLink?: string;
+  activeLink: string;
 }
 
 const Header: React.FC<Props> = ({ activeLink }) => {
-  console.log('header', activeLink);
+  const [modal, setModal] = useState<boolean>(false);
+
+  const toggleModal = () => {
+    setModal((modal) => !modal);
+  };
+
   return (
     <header className={styles.container}>
       <nav className={styles.containerNav}>
@@ -55,9 +62,10 @@ const Header: React.FC<Props> = ({ activeLink }) => {
           </div>
         </div>
         <div className={styles.btnLogin}>
-          <button>LOGIN</button>
+          <button onClick={toggleModal}>LOGIN</button>
         </div>
       </nav>
+      {modal && <LogIn />}
     </header>
   );
 };
