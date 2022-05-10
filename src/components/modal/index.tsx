@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './Modal.module.css';
-
+import Image from 'next/image';
+import Close from '../../assets/svg/close-circle_8.svg';
 interface ModalProps {
   show: boolean;
   onClose: any;
@@ -26,7 +27,12 @@ const Modal: React.FC<ModalProps> = ({ show, onClose, children, title }) => {
       <div className={styles.modal}>
         <div className={styles.header}>
           <button className={styles.btn} onClick={handleClose}>
-            Close
+            <Image
+              className={styles.svg}
+              src={Close}
+              width={'25'}
+              height={'25'}
+            />
           </button>
         </div>
         <div className={styles.body}>{children}</div>

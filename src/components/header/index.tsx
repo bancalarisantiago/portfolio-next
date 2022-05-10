@@ -70,12 +70,7 @@ const Header: React.FC<Props> = ({ activeLink }) => {
         </div>
       </nav>
       <Modal show={showModal} onClose={setShowModal} title={'Testing'}>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus ut
-          doloribus ipsum iusto in! Similique placeat, accusantium possimus
-          consequuntur quo laboriosam sint cumque culpa earum. Autem quam totam
-          ea, dolorum cumque veritatis.
-        </p>
+        <LogIn />
       </Modal>
     </header>
   );
