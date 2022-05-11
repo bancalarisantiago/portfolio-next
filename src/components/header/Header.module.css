@@ -2,7 +2,6 @@
   background-color: var(--color-blue-gray);
   position: fixed;
   width: 100%;
-  height: 12%;
   color: white;
 }
 .containerNav {
@@ -26,4 +25,39 @@
 
 .active {
   color: var(--color-yellow);
+}
+
+.btn {
+  border-radius: 4px;
+  height: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 20px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  background-color: var(--color-yellow);
+  color: var(--color-blue-gray);
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+}
+.btn:active,
+.btn:focus {
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+.btn:hover {
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
 }

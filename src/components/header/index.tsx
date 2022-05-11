@@ -4,20 +4,22 @@ import Logo from '../../assets/images/logo.png';
 import Image from 'next/image';
 //Component
 import LogIn from '../login';
+
 //Styles
 import styles from './Header.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
+import Modal from '../modal';
 
 interface Props {
   activeLink: string;
 }
 
 const Header: React.FC<Props> = ({ activeLink }) => {
-  const [modal, setModal] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const toggleModal = () => {
-    setModal((modal) => !modal);
+    setShowModal((modal) => !modal);
   };
 
   return (
@@ -62,10 +64,14 @@ const Header: React.FC<Props> = ({ activeLink }) => {
           </div>
         </div>
         <div className={styles.btnLogin}>
-          <button onClick={toggleModal}>LOGIN</button>
+          <button className={styles.btn} onClick={toggleModal}>
+            LOGIN
+          </button>
         </div>
       </nav>
-      {modal && <LogIn />}
+      <Modal show={showModal} onClose={setShowModal} title={'Testing'}>
+        <LogIn />
+      </Modal>
     </header>
   );
 };
