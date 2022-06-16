@@ -12,7 +12,7 @@ import { useState } from 'react';
 import Modal from '../modal';
 
 interface Props {
-  activeLink: string;
+  activeLink?: string;
 }
 
 const Header: React.FC<Props> = ({ activeLink }) => {
