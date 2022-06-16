@@ -1,5 +1,13 @@
 .container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(255, 217, 15, 1);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 217, 15, 1) 10%,
+    rgba(22, 27, 34, 1) 100%
+  );
 }

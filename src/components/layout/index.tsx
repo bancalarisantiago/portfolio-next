@@ -1,5 +1,5 @@
 import Header from '../header';
-import React, { ReactChildren, ReactChild } from 'react';
+import Footer from '../footer';
 
 interface props {
   children: React.ReactNode;
@@ -8,10 +8,11 @@ interface props {
 
 const Layout: React.FC<props> = ({ children, activeLink }) => {
   return (
-    <div>
+    <>
       <Header activeLink={activeLink} />
       {children}
-    </div>
+      <Footer />
+    </>
   );
 };
 

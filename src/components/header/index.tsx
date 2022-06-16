@@ -10,7 +10,8 @@ import styles from './Header.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 import Modal from '../modal';
-
+//Icons
+import Home from '../../assets/icons/home.png';
 interface Props {
   activeLink?: string;
 }
