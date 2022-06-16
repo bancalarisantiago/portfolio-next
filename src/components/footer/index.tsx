@@ -3,7 +3,7 @@ import styles from './Footer.module.css';
 const Footer: React.FC = () => {
   return (
     <div>
-      <footer className={styles.container}>Soy EL FOOTER</footer>
+      <footer className={styles.container}>Copy 2022</footer>
     </div>
   );
 };
