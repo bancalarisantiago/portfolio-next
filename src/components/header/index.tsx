@@ -39,27 +39,27 @@ const Header: React.FC<Props> = ({ activeLink }) => {
         <div className={styles.containerLinks}>
           <div className={styles.containerLi}>
             <Link href='/'>
-              <a className={activeLink === '/' ? styles.active : ''}>Home</a>
+              <a className={activeLink === '/' ? styles.active : ''}>HOME</a>
             </Link>
           </div>
           <div className={styles.containerLi}>
             <Link href='/about'>
               <a className={activeLink === '/about' ? styles.active : ''}>
-                About
+                ABOUT
               </a>
             </Link>
           </div>
           <div className={styles.containerLi}>
             <Link href='/portfolio'>
               <a className={activeLink === '/portfolio' ? styles.active : ''}>
-                Portfolio
+                PROJECTS
               </a>
             </Link>
           </div>
           <div className={styles.containerLi}>
             <Link href='/contact'>
               <a className={activeLink === '/contact' ? styles.active : ''}>
-                Contact
+                CONTACT
               </a>
             </Link>
           </div>
