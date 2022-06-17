@@ -1,10 +1,12 @@
 import Image from 'next/image';
 //import Illustration from '../../assets/illustrationalanding.png';
 import styles from './Landing.module.css';
+
+import ParticlesBackground from '../particlesBackground';
+
 const Landing: React.FC = () => {
   return (
     <>
-      {/* <Image src={Illustration} /> */}
       <div className={styles.container}>
         <p>
           Hi, I ' m SANTIAGO BANCALARI Fullstack Developer A passionate
@@ -13,6 +15,7 @@ const Landing: React.FC = () => {
           some other cool libraries and frameworks.
         </p>
       </div>
+      <ParticlesBackground />
     </>
   );
 };
