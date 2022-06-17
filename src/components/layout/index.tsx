@@ -7,6 +7,9 @@ interface props {
 }
 
 const Layout: React.FC<props> = ({ children, activeLink }) => {
+  // document.addEventListener('contextmenu', (event) => {
+  //   event.preventDefault();
+  // });
   return (
     <>
       <Header activeLink={activeLink} />

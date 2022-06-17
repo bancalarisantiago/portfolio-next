@@ -1,12 +1,8 @@
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
+
 const ParticlesBackground: React.FC = () => {
   const particlesInit = async (main: any) => {
-    console.log(main);
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(main);
   };
 
@@ -18,7 +14,7 @@ const ParticlesBackground: React.FC = () => {
         options={{
           background: {
             color: {
-              value: '#0d47a1',
+              value: '#0d1117',
             },
           },
           fpsLimit: 60,
@@ -32,21 +28,16 @@ const ParticlesBackground: React.FC = () => {
               },
             },
             color: {
-              value: '#ffffff',
+              value: '#1C81FF',
             },
             shape: {
               type: 'circle',
               stroke: {
-                width: 0,
-                color: '#000000',
+                width: 2,
+                color: '#ffd90f',
               },
               polygon: {
                 nb_sides: 5,
-              },
-              image: {
-                src: 'img/github.svg',
-                width: 100,
-                height: 100,
               },
             },
             opacity: {
@@ -64,7 +55,7 @@ const ParticlesBackground: React.FC = () => {
               random: true,
               anim: {
                 enable: false,
-                speed: 40,
+                speed: 20,
                 size_min: 0.1,
                 sync: false,
               },
@@ -72,13 +63,13 @@ const ParticlesBackground: React.FC = () => {
             line_linked: {
               enable: true,
               distance: 150,
-              color: '#ffffff',
+              color: '#ffd90f',
               opacity: 0.2,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 2,
+              speed: 1,
               direction: 'none',
               random: false,
               straight: false,
@@ -113,7 +104,7 @@ const ParticlesBackground: React.FC = () => {
               },
               bubble: {
                 distance: 400,
-                size: 40,
+                size: 200,
                 duration: 2,
                 opacity: 8,
               },
