@@ -18,7 +18,7 @@ const ParticlesBackground: React.FC = () => {
         options={{
           background: {
             color: {
-              value: '#0d47a1',
+              value: '#0d1117',
             },
           },
           fpsLimit: 60,
@@ -64,7 +64,7 @@ const ParticlesBackground: React.FC = () => {
               random: true,
               anim: {
                 enable: false,
-                speed: 40,
+                speed: 20,
                 size_min: 0.1,
                 sync: false,
               },
@@ -72,13 +72,13 @@ const ParticlesBackground: React.FC = () => {
             line_linked: {
               enable: true,
               distance: 150,
-              color: '#ffffff',
+              color: '#ffd90f',
               opacity: 0.2,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 2,
+              speed: 1,
               direction: 'none',
               random: false,
               straight: false,
