@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
   background: center;
-  background-color: rgba(0, 0, 0, 0.319);
+  background-color: rgba(0, 0, 0, 0.619);
 }
 .svg {
   -webkit-filter: invert(38%) sepia(44%) saturate(7499%) hue-rotate(346deg)

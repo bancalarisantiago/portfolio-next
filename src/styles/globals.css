@@ -1,8 +1,10 @@
 @import url('http://fonts.cdnfonts.com/css/adobe-clean');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
   --color-white: #fafafa;
   --color-yellow: #ffd90f;
+  --color-yellow-strong: #bfa40b;
+  --color-blue: #1c81ff;
   --color-blue-gray: #161b22;
   --color-black-gray: #0d1117;
 }
@@ -22,7 +24,7 @@ a {
   color: var(--color-white);
   position: relative;
   text-decoration: none;
-  font-family: 'Adobe Clean', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
 
