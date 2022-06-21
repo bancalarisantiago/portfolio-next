@@ -59,6 +59,6 @@
 }
 .btn:hover {
   background-color: var(--color-yellow-strong);
-  color: var(--color-white);
+  color: var(--color-blue-gray);
   box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
 }
