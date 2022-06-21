@@ -7,14 +7,22 @@ import ParticlesBackground from '../particlesBackground';
 const Landing: React.FC = () => {
   return (
     <>
-      <div className={styles.container}></div>
-      <ParticlesBackground />
-      <p>
-        Hi, I ' m SANTIAGO BANCALARI Fullstack Developer A passionate
-        Intermediate Full Stack Developer 🚀 having an experience of building
-        responsive Web applications with JavaScript / Reactjs / Nodejs and some
-        other cool libraries and frameworks.
-      </p>
+      <div className={styles.container}>
+        <ParticlesBackground />
+        <div className={styles.title}>
+          <h1>
+            Hi, I ' m <span> SANTIAGO </span>
+          </h1>
+          <p>
+            Fullstack Developer A passionate Intermediate Full Stack Developer
+            🚀 having an experience of building responsive Web applications with
+            JavaScript / Reactjs / Nodejs and some other cool libraries and
+            frameworks.
+          </p>
+          <button>DOWNLOAD CV</button>
+          <button>GITHUB</button>
+        </div>
+      </div>
     </>
   );
 };

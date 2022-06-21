@@ -4,11 +4,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.title {
+  position: relative;
+  color: var(--color-white);
+  font-family: 'Montserrat';
+  z-index: 2;
+  max-width: 450px;
+  bottom: 0;
+}
 
-  /* background: rgba(255, 217, 15, 1);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 217, 15, 1) 10%,
-    rgba(22, 27, 34, 1) 100%
-  ); */
+.title span {
+  font-family: 'Bebas Neue';
+  font-size: 3rem;
+  color: var(--color-yellow);
+}
+.title h1 {
+  font-family: 'Montserrat';
+  font-size: 2rem;
 }
