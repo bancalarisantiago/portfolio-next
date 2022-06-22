@@ -13,7 +13,7 @@ const Landing: React.FC = () => {
         <ParticlesBackground />
         <div className={styles.title}>
           <h1>
-            Hi, I ' m <span> SANTIAGO </span>
+            Hi, I &apos; m <span> SANTIAGO </span>
           </h1>
           <p>
             A passionate <strong>Full Stack Developer</strong> and{' '}
