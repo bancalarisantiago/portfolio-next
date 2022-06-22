@@ -16,14 +16,13 @@ const Landing: React.FC = () => {
             Hi, I &apos; m <span> SANTIAGO </span>
           </h1>
           <p>
-            A passionate <strong>Full Stack Developer</strong> and{' '}
+            A passionate <strong>Full Stack Developer</strong> and
             <strong>Audiovisual Designer</strong> having an experience of
             building responsive Web applications with JavaScript / Reactjs /
             Nodejs and some other cool libraries and frameworks.
           </p>
           <div className={styles.btnCotainer}>
             <button className={styles.btn}>
-              {' '}
               <BiDownload size={'15px'} />
               &nbsp; Download<strong> &nbsp; CV</strong>
             </button>
