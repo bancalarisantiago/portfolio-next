@@ -19,30 +19,3 @@ body {
 * {
   box-sizing: border-box;
 }
-
-a {
-  color: var(--color-white);
-  position: relative;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-}
-
-a::before {
-  content: '';
-  margin: -3px 0;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-yellow);
-  bottom: 0;
-  left: 0;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-a:hover::before {
-  transform-origin: left;
-  transform: scaleX(1);
-}
