@@ -2,7 +2,7 @@ import styles from './LogIn.module.css';
 import { signIn, useSession } from 'next-auth/react';
 
 const LogIn: React.FC = () => {
-  // const [session, loading] = useSession();
+  //const [session, loading] = useSession();
 
   return (
     <div className={styles.containerModal}>
