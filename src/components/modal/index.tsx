@@ -32,6 +32,7 @@ const Modal: React.FC<ModalProps> = ({ show, onClose, children, title }) => {
               src={Close}
               width={'25'}
               height={'25'}
+              alt={'close-button'}
             />
           </button>
         </div>
