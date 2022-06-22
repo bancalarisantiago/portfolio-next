@@ -4,11 +4,81 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-white);
+  font-family: 'Montserrat';
+  z-index: 2;
+  max-width: 600px;
+  bottom: 0;
+  text-align: justify;
+}
 
-  /* background: rgba(255, 217, 15, 1);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 217, 15, 1) 10%,
-    rgba(22, 27, 34, 1) 100%
-  ); */
+.title p {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+.title span {
+  font-family: 'Bebas Neue';
+  font-size: 3rem;
+  color: var(--color-yellow);
+}
+.title h1 {
+  font-family: 'Montserrat';
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.btnCotainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.btn {
+  margin: 0 0.5rem;
+  border-radius: 1px;
+  height: 40px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 20px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  background-color: var(--color-yellow);
+  color: var(--color-blue-gray);
+}
+.btn:active,
+.btn:focus {
+  background-color: var(--color-yellow-strong);
+  color: var(--color-white);
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+.btn:hover {
+  background-color: var(--color-yellow-strong);
+
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+
+.btnGithub {
+  background-color: transparent;
+  color: var(--color-yellow);
+  border: 1px solid var(--color-yellow);
+}
+.btnGithub:hover {
+  color: var(--color-blue-gray);
 }
