@@ -1,7 +1,6 @@
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 
-import styles from './particlesBackground.module.css';
 const ParticlesBackground: React.FC = () => {
   const particlesInit = async (main: any) => {
     await loadFull(main);
@@ -13,12 +12,13 @@ const ParticlesBackground: React.FC = () => {
         id='tsparticles'
         init={particlesInit}
         options={{
-          fpsLimit: 60,
           background: {
             color: {
               value: '#0d1117',
             },
           },
+          fpsLimit: 60,
+
           particles: {
             number: {
               value: 80,
