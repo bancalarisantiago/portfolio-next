@@ -24,7 +24,7 @@ const LogIn: React.FC = () => {
           </div>
           <div>
             {!user && (
-              <button className={styles.btn} onClick={() => signIn('github')}>
+              <button className={styles.btn} onClick={() => signIn('GitHub')}>
                 Sign In
               </button>
             )}

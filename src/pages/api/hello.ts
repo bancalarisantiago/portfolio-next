@@ -11,7 +11,9 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
 
-const session = await getSession();
+const session = await getSession({req});
+
+console.log("session back", session)
 
 if(!session) return res.status(401).send({name:'No user authenticated'})
   
