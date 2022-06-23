@@ -21,15 +21,15 @@ const ParticlesBackground: React.FC = () => {
 
           particles: {
             number: {
-              value: 80,
+              value: 60,
               density: {
                 enable: true,
-                value_area: 800,
+                value_area: 600,
               },
             },
-            color: {
-              value: '#1C81FF',
-            },
+            // color: {
+            //   value: '#1C81FF',
+            // },
             shape: {
               type: 'circle',
               stroke: {
