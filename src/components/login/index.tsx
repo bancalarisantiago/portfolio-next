@@ -1,9 +1,10 @@
 import styles from './LogIn.module.css';
-import { signIn, useSession } from 'next-auth/react';
+import { signOut, signIn, useSession } from 'next-auth/react';
 
 const LogIn: React.FC = () => {
-  //const [session, loading] = useSession();
-
+  const { data: session, status } = useSession();
+  const user = session?.user;
+  console.log('session', user);
   return (
     <div className={styles.containerModal}>
       <form>
@@ -22,9 +23,16 @@ const LogIn: React.FC = () => {
             </label>
           </div>
           <div>
-            <button className={styles.btn} onClick={() => signIn()}>
-              Sign In
-            </button>
+            {!user && (
+              <button className={styles.btn} onClick={() => signIn('github')}>
+                Sign In
+              </button>
+            )}
+            {user && (
+              <button className={styles.btn} onClick={() => signOut()}>
+                Sign Out
+              </button>
+            )}
           </div>
         </div>
       </form>
