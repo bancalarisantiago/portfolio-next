@@ -5,7 +5,6 @@ import { getSession } from 'next-auth/react';
 //Components
 import Dashboard from '../components/dashboard';
 
-
 interface Props {
   session: any;
 }
