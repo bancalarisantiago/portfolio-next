@@ -3,13 +3,15 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Layout from '../components/layout';
 import { SessionProvider } from 'next-auth/react';
-import { useSession } from 'next-auth/react';
+import Loading from '../components/loading';
+import { useEffect, useRef } from 'react';
+
 function MyApp({ Component, pageProps }: AppProps) {
-  const path = useRouter();
+  const { pathname } = useRouter();
 
   return (
     <SessionProvider session={pageProps.session}>
-      <Layout activeLink={path.pathname}>
+      <Layout activeLink={pathname}>
         <Component {...pageProps} />
       </Layout>
     </SessionProvider>

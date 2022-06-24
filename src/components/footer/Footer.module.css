@@ -13,9 +13,16 @@
   margin: 0.5rem auto;
   color: var(--color-white);
 }
+
+.icons a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
 .icon {
   margin: 0 0.5rem;
 }
+
 .icon:hover {
   color: var(--color-yellow);
 }
