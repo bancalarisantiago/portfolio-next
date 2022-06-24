@@ -1,17 +1,14 @@
-import Image from 'next/image';
 //import Illustration from '../../assets/illustrationalanding.png';
 import { FaGithub } from 'react-icons/fa';
 import { BiDownload } from 'react-icons/bi';
 import styles from './Landing.module.css';
 
-import ParticlesBackground from '../particlesBackground';
 import Link from 'next/link';
 
 const Landing: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
-        <ParticlesBackground />
         <div className={styles.title}>
           <h1>
             Hi, I &apos; m <span> SANTIAGO </span>

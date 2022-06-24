@@ -1,5 +1,6 @@
 import Header from '../header';
 import Footer from '../footer';
+import ParticlesBackground from '../particlesBackground';
 
 interface props {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ const Layout: React.FC<props> = ({ children, activeLink }) => {
   return (
     <>
       <Header activeLink={activeLink} />
+      <ParticlesBackground />
       {children}
       <Footer />
     </>
