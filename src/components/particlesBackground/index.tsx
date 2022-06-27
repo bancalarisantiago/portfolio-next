@@ -4,7 +4,7 @@ import { loadFull } from 'tsparticles';
 
 const ParticlesBackground: React.FC = () => {
   const { theme } = useTheme();
-  const background = theme === 'dark' ? '#0d1117' : '#555';
+  const background = theme === 'dark' ? '#0d1117' : '#d8dde6';
   const particlesColor = theme === 'dark' ? '#ffd90f' : '#1c81ff';
 
   const particlesInit = async (main: any) => {
@@ -32,9 +32,7 @@ const ParticlesBackground: React.FC = () => {
                 value_area: 600,
               },
             },
-            // color: {
-            //   value: '#1C81FF',
-            // },
+
             shape: {
               type: 'circle',
               stroke: {
@@ -56,7 +54,7 @@ const ParticlesBackground: React.FC = () => {
               },
             },
             size: {
-              value: 2,
+              value: 3,
               random: true,
               anim: {
                 enable: false,
@@ -70,7 +68,7 @@ const ParticlesBackground: React.FC = () => {
               distance: 150,
               color: `${particlesColor}`,
               opacity: 0.2,
-              width: 1,
+              width: 2,
             },
             move: {
               enable: true,

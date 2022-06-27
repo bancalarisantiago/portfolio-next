@@ -10,7 +10,7 @@ const Landing: React.FC = () => {
     <>
       <div className={styles.container}>
         <div className={styles.title}>
-          {/* <h1>
+          <h1>
             Hi, I &apos; m <span> SANTIAGO </span>
           </h1>
           <p>
@@ -18,7 +18,7 @@ const Landing: React.FC = () => {
             <strong>Audiovisual Designer</strong> having an experience of
             building responsive Web applications with JavaScript / Reactjs /
             Nodejs and some other cool libraries and frameworks.
-          </p> */}
+          </p>
           <div className={styles.btnContainer}>
             <Link href='https://drive.google.com/file/d/18W9rsevgokD0bSujLuE7MUKS_i3Kfnj8/view?usp=sharing'>
               <a target='_blank'>
