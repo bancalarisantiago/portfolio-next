@@ -3,17 +3,18 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Layout from '../components/layout';
 import { SessionProvider } from 'next-auth/react';
-import Loading from '../components/loading';
-import { useEffect, useRef } from 'react';
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
 
   return (
     <SessionProvider session={pageProps.session}>
-      <Layout activeLink={pathname}>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeProvider defaultTheme='system'>
+        <Layout activeLink={pathname}>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </SessionProvider>
   );
 }

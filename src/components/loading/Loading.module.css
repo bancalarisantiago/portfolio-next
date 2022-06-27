@@ -20,7 +20,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: var(--color-yellow);
+  background: var(--color-primary);
   -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
