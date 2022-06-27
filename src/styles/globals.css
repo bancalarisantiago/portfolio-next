@@ -1,13 +1,30 @@
 @import url('http://fonts.cdnfonts.com/css/adobe-clean');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
-  --color-white: #fafafa;
-  --color-yellow: #ffd90f;
-  --color-yellow-strong: #bfa40b;
-  --color-blue: #1c81ff;
-  --color-blue-gray: #161b22;
+  --color-text: #0d1117;
+  --color-primary: #1c81ff;
+  --color-primary-strong: #1d5fb3;
+  --color-bg-layout: white;
   --color-black-gray: #0d1117;
 }
+
+[data-theme='dark'] {
+  --color-text: #fafafa;
+  --color-primary: #ffd90f;
+  --color-primary-strong: #bfa40b;
+  --color-bg-layout: #161b22;
+}
+
+/* [data-theme='dark'] {
+  -color-yellow: #ffd90f;
+  --color-primary-strong: #bfa40b;
+  --color-blue: #1c81ff;
+  --color-blue-strong: #1d5fb3;
+  --color-blue-gray: #161b22;
+  --color-black-gray: #0d1117;
+} */
+
 html,
 body {
   padding: 0;

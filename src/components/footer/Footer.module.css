@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--color-blue-gray);
+  background-color: var(--color-bg-layout);
   position: fixed;
   left: 0;
   bottom: 0;
@@ -11,11 +11,11 @@
 
 .icons {
   margin: 0.5rem auto;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .icons a {
-  color: var(--color-white);
+  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -24,5 +24,5 @@
 }
 
 .icon:hover {
-  color: var(--color-yellow);
+  color: var(--color-primary);
 }

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import LogIn from '../login';
 
 //Styles
+import { useTheme } from 'next-themes';
 import styles from './Header.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -19,6 +20,7 @@ interface Props {
 
 const Header: React.FC<Props> = ({ activeLink }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const { theme, setTheme } = useTheme();
 
   const toggleModal = () => {
     setShowModal((modal) => !modal);
@@ -90,6 +92,10 @@ const Header: React.FC<Props> = ({ activeLink }) => {
               </a>
             </Link>
           </div>
+        </div>
+        <div>
+          <button onClick={() => setTheme('light')}>Light Mode</button>
+          <button onClick={() => setTheme('dark')}>Dark Mode</button>
         </div>
         <div className={styles.btnLogin}>
           <button className={styles.btn} onClick={toggleModal}>

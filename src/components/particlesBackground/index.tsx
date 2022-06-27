@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useTheme } from 'next-themes';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 
 const ParticlesBackground: React.FC = () => {
+  const { theme } = useTheme();
+  const background = theme === 'dark' ? '#0d1117' : '#555';
+  const particlesColor = theme === 'dark' ? '#ffd90f' : '#1c81ff';
+
   const particlesInit = async (main: any) => {
     await loadFull(main);
   };
@@ -15,7 +19,7 @@ const ParticlesBackground: React.FC = () => {
         options={{
           background: {
             color: {
-              value: '#0d1117',
+              value: `${background}`,
             },
           },
           fpsLimit: 60,
@@ -35,7 +39,7 @@ const ParticlesBackground: React.FC = () => {
               type: 'circle',
               stroke: {
                 width: 2,
-                color: '#ffd90f',
+                color: `${particlesColor}`,
               },
               polygon: {
                 nb_sides: 5,
@@ -64,7 +68,7 @@ const ParticlesBackground: React.FC = () => {
             line_linked: {
               enable: true,
               distance: 150,
-              color: '#ffd90f',
+              color: `${particlesColor}`,
               opacity: 0.2,
               width: 1,
             },
