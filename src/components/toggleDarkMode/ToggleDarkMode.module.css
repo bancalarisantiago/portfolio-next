@@ -1,0 +1,17 @@
+.icon {
+  color: var(--color-primary);
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+/* .btn:hover {
+  transform: scale(1.5);
+  transition-duration: 1s;
+} */
