@@ -28,12 +28,13 @@ const About: React.FC = () => {
                 layout='fixed'
                 width={120}
                 height={120}
+                alt='profile-photo'
               ></Image>
             </div>
             <p>
-              I'm constantly learning and perfecting my skill as a developer
-              every day. I enjoy challenges and goals that force me to increase
-              my knowledge and skills. I like to create things with
+              I &apos; m constantly learning and perfecting my skill as a
+              developer every day. I enjoy challenges and goals that force me to
+              increase my knowledge and skills. I like to create things with
               JavaScript/TypeScript technologies that can help people do their
               chores easier and faster.
             </p>
