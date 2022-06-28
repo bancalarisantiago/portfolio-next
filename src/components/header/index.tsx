@@ -4,15 +4,14 @@ import Logo from '../../assets/images/logo.png';
 import Image from 'next/image';
 //Component
 import LogIn from '../login';
-
+import ToggleDarkMode from '../toggleDarkMode';
 //Styles
-import { useTheme } from 'next-themes';
 import styles from './Header.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
 import Modal from '../modal';
 //Icons
-import { FaHome } from 'react-icons/fa';
+import { FaHome, FaMoon, FaSun } from 'react-icons/fa';
 import { BsInfoSquareFill } from 'react-icons/bs';
 interface Props {
   activeLink?: string;
@@ -20,13 +19,9 @@ interface Props {
 
 const Header: React.FC<Props> = ({ activeLink }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  const { theme, setTheme } = useTheme();
 
   const toggleModal = () => {
     setShowModal((modal) => !modal);
-  };
-  const toggleDarkMode = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
   };
 
   return (
@@ -96,14 +91,12 @@ const Header: React.FC<Props> = ({ activeLink }) => {
             </Link>
           </div>
         </div>
-        <div>
-          {}
-          <button onClick={toggleDarkMode}>Dark Mode</button>
-        </div>
+
         <div className={styles.btnLogin}>
           <button className={styles.btn} onClick={toggleModal}>
             LOGIN
           </button>
+          <ToggleDarkMode />
         </div>
       </nav>
       <Modal show={showModal} onClose={setShowModal} title={'Testing'}>

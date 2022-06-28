@@ -11,7 +11,10 @@
   justify-content: space-around;
   margin: 10px;
 }
-
+.btnLogin {
+  display: flex;
+  align-items: center;
+}
 .logo {
   max-width: 120px;
 }
@@ -52,6 +55,8 @@
 }
 
 .btn {
+  margin: 0 15px;
+  padding: 0 20px;
   border-radius: 4px;
   height: 20px;
   font-size: 10px;
@@ -59,7 +64,6 @@
   font-family: 'Montserrat';
   text-transform: uppercase;
   transition: all 200ms linear;
-  padding: 0 20px;
   letter-spacing: 1px;
   display: inline-flex;
   -moz-align-items: center;
@@ -72,10 +76,9 @@
   text-align: center;
   border: none;
   background-color: var(--color-primary);
-  color: var(--color-bg-header);
+  color: var(--color-bg-layout);
 }
-.btn:active,
-.btn:focus {
+.btn:active {
   background-color: var(--color-primary-strong);
   color: var(--color-text);
   box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
