@@ -25,6 +25,9 @@ const Header: React.FC<Props> = ({ activeLink }) => {
   const toggleModal = () => {
     setShowModal((modal) => !modal);
   };
+  const toggleDarkMode = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+  };
 
   return (
     <header className={styles.container}>
@@ -94,8 +97,8 @@ const Header: React.FC<Props> = ({ activeLink }) => {
           </div>
         </div>
         <div>
-          <button onClick={() => setTheme('light')}>Light Mode</button>
-          <button onClick={() => setTheme('dark')}>Dark Mode</button>
+          {}
+          <button onClick={toggleDarkMode}>Dark Mode</button>
         </div>
         <div className={styles.btnLogin}>
           <button className={styles.btn} onClick={toggleModal}>

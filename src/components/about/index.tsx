@@ -6,15 +6,17 @@ const About: React.FC = () => {
     <>
       <div className={styles.container}>
         <div className={styles.title}>
-          <h1>
-            Hi, I &apos; m <span> SANTIAGO </span>
-          </h1>
-          <p>
-            A passionate <strong>Full Stack Developer</strong> and
-            <strong>Audiovisual Designer</strong> having an experience of
-            building responsive Web applications with JavaScript / Reactjs /
-            Nodejs and some other cool libraries and frameworks.
-          </p>
+          <div className={styles.content}>
+            <h1>
+              <span> SKILLS </span>
+            </h1>
+            <p>
+              I love working on a variety of technologies including Web
+              Development, Mobile App Development and Deep Learning. My goal is
+              to build highly performant applications that solve real-world
+              problems and provide users with an awesome experience.
+            </p>
+          </div>
         </div>
       </div>
     </>

@@ -1,7 +1,15 @@
+import styles from './Contact.module.css';
+
 const Contact: React.FC = () => {
   return (
     <>
-      <div>eeeee</div>
+      <div className={styles.container}>
+        <div className={styles.title}>
+          <h1>
+            <span> CONTACT </span>
+          </h1>
+        </div>
+      </div>
     </>
   );
 };
