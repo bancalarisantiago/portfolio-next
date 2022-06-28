@@ -7,10 +7,14 @@
 }
 
 .content {
-  padding: 1rem;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  border: 5px ridge var(--color-primary) /* border-radius: 1rem; */;
+  backdrop-filter: blur(3px);
+  /* border-radius: 1rem; */
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.07),
     6.7px 6.7px 5.3px rgba(0, 0, 0, 0.05),
     12.5px 12.5px 10px rgba(0, 0, 0, 0.042),
@@ -18,30 +22,39 @@
     41.8px 41.8px 33.4px rgba(0, 0, 0, 0.028),
     100px 100px 80px rgba(0, 0, 0, 0.02);
 }
-.title {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--color-text);
-  font-family: 'Montserrat';
-  z-index: 2;
-  max-width: 600px;
-  bottom: 0;
-  text-align: justify;
+.meContent {
+  width: 50%;
+  padding: 1rem;
 }
-
-.title p {
+.technologiesContent {
+  width: 50%;
+  padding: 1rem;
+}
+.photo {
+  width: 10%;
+}
+.divider {
+  width: 20%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+}
+.icon {
+  margin: 0 10px;
+}
+.content p {
   font-size: 1.3rem;
   font-weight: 300;
 }
-.title span {
-  font-family: 'Bebas Neue';
-  font-size: 3rem;
-  color: var(--color-primary);
-}
-.title h1 {
+
+.content h1 {
   font-family: 'Montserrat';
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin: 0;
+  color: var(--color-text);
 }
