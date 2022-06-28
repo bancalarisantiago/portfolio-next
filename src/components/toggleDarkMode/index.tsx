@@ -12,9 +12,9 @@ const ToggleDarkMode: React.FC = () => {
     <div>
       <button className={styles.btn} onClick={toggleDarkMode}>
         {theme === 'dark' ? (
-          <FaMoon className={styles.icon} size='20px' />
+          <FaMoon className={styles.icon} size='18px' />
         ) : (
-          <FaSun className={styles.icon} size='20px' />
+          <FaSun className={styles.icon} size='18px' />
         )}
       </button>
     </div>

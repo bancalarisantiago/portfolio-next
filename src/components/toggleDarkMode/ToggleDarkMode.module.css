@@ -1,5 +1,10 @@
 .icon {
+  color: var(--color-text);
+}
+
+.icon:hover {
   color: var(--color-primary);
+  transition: all 400ms linear;
 }
 
 .btn {

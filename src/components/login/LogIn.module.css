@@ -29,7 +29,7 @@
   text-align: center;
   border: none;
   background-color: var(--color-primary);
-  color: var(--color-bg-header);
+  color: var(--color-bg-layout);
 }
 .btn:active,
 .btn:focus {

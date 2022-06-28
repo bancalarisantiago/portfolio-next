@@ -25,4 +25,5 @@
 
 .icon:hover {
   color: var(--color-primary);
+  transition: all 400ms linear;
 }

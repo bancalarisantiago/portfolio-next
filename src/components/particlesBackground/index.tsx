@@ -5,7 +5,7 @@ import { loadFull } from 'tsparticles';
 const ParticlesBackground: React.FC = () => {
   const { theme } = useTheme();
   const background = theme === 'dark' ? '#0d1117' : '#d8dde6';
-  const particlesColor = theme === 'dark' ? '#ffd90f' : '#1c81ff';
+  const particlesColor = theme === 'dark' ? '#f7df1e' : '#2d79c7';
 
   const particlesInit = async (main: any) => {
     await loadFull(main);

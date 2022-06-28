@@ -91,13 +91,12 @@ const Header: React.FC<Props> = ({ activeLink }) => {
             </Link>
           </div>
         </div>
-        <div>
-          <ToggleDarkMode />
-        </div>
+
         <div className={styles.btnLogin}>
           <button className={styles.btn} onClick={toggleModal}>
             LOGIN
           </button>
+          <ToggleDarkMode />
         </div>
       </nav>
       <Modal show={showModal} onClose={setShowModal} title={'Testing'}>

@@ -3,7 +3,7 @@
 
 :root {
   --color-text: #30343a;
-  --color-primary: #1c81ff;
+  --color-primary: #2d79c7;
   --color-primary-strong: #1d5fb3;
   --color-bg-layout: #edf3ff;
   --color-black-gray: #0d1117;
@@ -11,19 +11,10 @@
 
 [data-theme='dark'] {
   --color-text: #fafafa;
-  --color-primary: #ffd90f;
+  --color-primary: #f7df1e;
   --color-primary-strong: #bfa40b;
   --color-bg-layout: #161b22;
 }
-
-/* [data-theme='dark'] {
-  -color-yellow: #ffd90f;
-  --color-primary-strong: #bfa40b;
-  --color-blue: #1c81ff;
-  --color-blue-strong: #1d5fb3;
-  --color-blue-gray: #161b22;
-  --color-black-gray: #0d1117;
-} */
 
 html,
 body {
