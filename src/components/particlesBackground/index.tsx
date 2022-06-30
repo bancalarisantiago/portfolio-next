@@ -7,10 +7,10 @@ const ParticlesBackground: React.FC = (props) => {
   const { theme } = useTheme();
   const background = theme === 'dark' ? '#0d1117' : '#d8dde6';
   const particlesColor = theme === 'dark' ? '#f7df1e' : '#2d79c7';
-  const color: any = useRef();
   const particlesInit = async (main: any) => {
     await loadFull(main);
   };
+  //const color: any = useRef();
   // useEffect(() => {
   //   console.log(
   //     getComputedStyle(color.current).getPropertyValue('--color-primary')
@@ -19,7 +19,6 @@ const ParticlesBackground: React.FC = (props) => {
 
   return (
     <>
-      <div className={styles.test} ref={color}></div>
       <Particles
         id='tsparticles'
         init={particlesInit}
@@ -30,7 +29,6 @@ const ParticlesBackground: React.FC = (props) => {
             },
           },
           fpsLimit: 60,
-
           particles: {
             number: {
               value: 60,

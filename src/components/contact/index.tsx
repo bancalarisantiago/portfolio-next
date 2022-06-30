@@ -8,6 +8,14 @@ const Contact: React.FC = () => {
           <h1>
             <span> CONTACT </span>
           </h1>
+          <div>
+            <form>
+              <input type='text'></input>
+              <input type='text'></input>
+              <input type='mail'></input>
+              <button type='submit'>SEND</button>
+            </form>
+          </div>
         </div>
       </div>
     </>
