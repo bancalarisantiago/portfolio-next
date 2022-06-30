@@ -1,35 +1,75 @@
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.title {
-  position: relative;
+.form {
+  width: 20%;
+  height: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: var(--color-text);
-  font-family: 'Montserrat';
-  z-index: 2;
-  max-width: 600px;
-  bottom: 0;
-  text-align: justify;
+}
+.group {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  overflow: hidden;
 }
 
-.title p {
-  font-size: 1.3rem;
-  font-weight: 300;
+.group input {
+  width: 100%;
+  height: 100%;
+  color: var(--color-text);
+  padding-top: 20px;
+  background: none;
+  border: none;
+  outline: none;
 }
-.title span {
-  font-family: 'Bebas Neue';
-  font-size: 3rem;
+.group label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+  left: 0%;
+  pointer-events: none;
+  border-bottom: 1px solid var(--color-text);
+}
+
+.group label::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  bottom: -1px;
+  border-bottom: 2px solid var(--color-primary);
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+.contentName {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.group input:focus + .labelName .contentName,
+.group input:valid + .labelName .contentName {
+  transform: translateY(-150%);
+  font-size: 0.9rem;
   color: var(--color-primary);
 }
+
+.group input:focus + .labelName::after,
+.group input:valid + .labelName::after {
+  transform: translateY(0%);
+}
 .title h1 {
-  font-family: 'Montserrat';
+  font-family: 'Bebas Neue';
   font-size: 2.5rem;
-  margin: 0;
+  color: var(--color-primary);
 }

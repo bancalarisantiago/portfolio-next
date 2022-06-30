@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { IoIosSunny } from 'react-icons/io';
 import styles from './ToggleDarkMode.module.css';
 
 const useLoaded = () => {
@@ -21,7 +22,7 @@ const ToggleDarkMode: React.FC = () => {
     <div>
       <button className={styles.btn} onClick={toggleDarkMode}>
         {loaded && theme !== 'dark' ? (
-          <FaSun className={styles.icon} size='18px' />
+          <IoIosSunny className={styles.icon} size='20px' />
         ) : (
           <FaMoon className={styles.icon} size='18px' />
         )}
