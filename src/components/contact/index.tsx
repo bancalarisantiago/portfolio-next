@@ -4,20 +4,54 @@ const Contact: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.title}>
-          <h1>
-            <span> CONTACT </span>
-          </h1>
-          <div>
-            <form>
-              <input type='text'></input>
-              <input type='text'></input>
-              <input type='mail'></input>
-              <button type='submit'>SEND</button>
-            </form>
+        <form className={styles.form}>
+          <div className={styles.group}>
+            <input type='text' autoComplete='off' required />
+            <label className={styles.labelName}>
+              <span className={styles.contentName}>Name</span>
+            </label>
           </div>
-        </div>
+          <div className={styles.group}>
+            <input type='text' autoComplete='off' required />
+            <label className={styles.labelName}>
+              <span className={styles.contentName}>Company</span>
+            </label>
+          </div>
+          <div className={styles.group}>
+            <input type='email' autoComplete='off' required />
+            <label className={styles.labelName}>
+              <span className={styles.contentName}>Email</span>
+            </label>
+          </div>
+        </form>
       </div>
+
+      {/* <div>
+                <input type='text' autoComplete='off' required />
+                <label className={styles.labelName}>
+                  <span className={styles.contentName}>Name</span>
+                </label>
+              </div> */}
+
+      {/* <div className={styles.group}>
+                <label className={styles.label}>
+                  <span> Name</span>
+                  <input type='text' className={styles.input} required />
+                </label>
+              </div>
+              <label>
+                Company
+                <input type='text' />
+              </label>
+              <label>
+                Email
+                <input type='email' />
+              </label>
+              <label>
+                Message
+                <textarea />
+              </label> */}
+      {/* <button type='submit'>SEND</button> */}
     </>
   );
 };
