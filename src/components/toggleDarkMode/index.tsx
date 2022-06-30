@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import styles from './ToggleDarkMode.module.css';
+
 const ToggleDarkMode: React.FC = () => {
   const { theme, setTheme } = useTheme();
 

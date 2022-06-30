@@ -7,6 +7,29 @@ import photo from '../../assets/images/fotoPerfilBN.png';
 //Icons
 import { GiTechnoHeart } from 'react-icons/gi';
 import { BsInfoCircle } from 'react-icons/bs';
+import {
+  SiJavascript,
+  SiTypescript,
+  SiPostgresql,
+  SiReact,
+  SiRedux,
+  SiSequelize,
+  SiNextdotjs,
+  SiChakraui,
+  SiExpress,
+  SiHtml5,
+  SiNodedotjs,
+  SiCss3,
+  SiTrello,
+  SiSlack,
+  SiGit,
+  SiGithub,
+  SiAdobephotoshop,
+  SiAdobepremierepro,
+  SiAdobeaftereffects,
+  SiAdobelightroom,
+  SiFigma,
+} from 'react-icons/si';
 const About: React.FC = () => {
   return (
     <>
@@ -55,6 +78,30 @@ const About: React.FC = () => {
               to build highly performant applications that solve real-world
               problems and provide users with an awesome experience.
             </p>
+            <div>
+              <SiJavascript />
+              <SiTypescript />
+              <SiPostgresql />
+              <SiReact />
+              <SiRedux />
+              <SiSequelize />
+              <SiNextdotjs />
+              <SiChakraui />
+              <SiExpress />
+              <SiHtml5 />
+              <SiNodedotjs />
+              <SiCss3 />
+              <SiTrello />
+              <SiSlack />
+              <SiGit />
+              <SiGithub />
+              <SiAdobephotoshop />
+              <SiAdobepremierepro />
+              <SiAdobeaftereffects />
+              <SiAdobelightroom />
+              <SiFigma />
+              mongoose
+            </div>
           </div>
         </div>
       </div>
