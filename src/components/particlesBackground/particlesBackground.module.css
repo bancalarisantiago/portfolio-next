@@ -3,3 +3,9 @@
   height: 100vh;
   background-color: var(--color-black-gray);
 }
+
+.test {
+  color: var(--color-primary);
+  background-color: var(--color-black-gray);
+  font-size: 2rem;
+}
