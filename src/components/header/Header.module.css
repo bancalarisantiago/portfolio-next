@@ -11,6 +11,7 @@
   justify-content: space-around;
   margin: 10px;
 }
+
 .btnLogin {
   display: flex;
   align-items: center;
@@ -91,4 +92,10 @@
 
 .icon {
   margin: -2px 4px;
+}
+
+@media (max-width: 660px) {
+  .containerLi {
+    display: none;
+  }
 }
