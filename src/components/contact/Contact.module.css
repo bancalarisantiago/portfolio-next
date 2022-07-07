@@ -77,7 +77,6 @@
 
 .group label::after {
   content: '';
-
   position: absolute;
   height: 100%;
   width: 100%;
@@ -96,7 +95,7 @@
   bottom: -1px;
   border-bottom: 2px solid var(--color-primary);
   transform: translateX(-100%);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .contentName {
   position: absolute;
@@ -178,7 +177,7 @@
 } */
 
 .btnForm {
-  width: 50%;
+  width: 25%;
   border-radius: 1px;
   height: 40px;
   font-size: 0.8rem;
@@ -199,7 +198,6 @@
   border: none;
   background-color: var(--color-primary);
   color: var(--color-bg-layout);
-  transition: all 0.2s;
 }
 
 .btnForm span {
@@ -209,6 +207,7 @@
 }
 
 .btnForm svg {
+  margin-right: 0.8em;
   display: block;
   transform-origin: center center;
   transition: transform 0.3s ease-in-out;
