@@ -1,11 +1,30 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './Contact.module.css';
 
+//Icons
+import { FaPaperPlane } from 'react-icons/fa';
+interface IForm {
+  name: string;
+  company: string;
+  email: string;
+  message: string;
+}
+
 const Contact: React.FC = () => {
-  const textarea = useRef<any>(null);
+  const formRef = useRef<any>(null);
+
+  const [form, setForm] = useState<IForm>({
+    name: '',
+    company: '',
+    email: '',
+    message: '',
+  });
 
   function handleInputOnChange(event: any) {
-    console.log(textarea);
+    const { value, name } = event.target;
+    if (value) {
+      setForm({ ...form, [name]: value });
+    }
   }
 
   function handleOnSubmit(event: any) {
@@ -14,10 +33,16 @@ const Contact: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
-        <form className={styles.form} onSubmit={handleOnSubmit}>
+        <form className={styles.form} onSubmit={handleOnSubmit} ref={formRef}>
+          <div className={styles.title}>
+            <h1>
+              <span> FORM </span>
+            </h1>
+          </div>
           <div className={styles.group}>
             <input
               type='text'
+              name='name'
               autoComplete='off'
               onChange={handleInputOnChange}
               required
@@ -29,6 +54,7 @@ const Contact: React.FC = () => {
           <div className={styles.group}>
             <input
               type='text'
+              name='company'
               autoComplete='off'
               onChange={handleInputOnChange}
               required
@@ -40,6 +66,7 @@ const Contact: React.FC = () => {
           <div className={styles.group}>
             <input
               type='text'
+              name='email'
               autoComplete='off'
               onChange={handleInputOnChange}
               required
@@ -60,18 +87,44 @@ const Contact: React.FC = () => {
               <span className={styles.contentName}>Message</span>
             </label>
           </div> */}
-          <div className={styles.group}>
+          <div className={styles.groupTextarea}>
             <textarea
+              name='message'
               autoComplete='off'
               onChange={handleInputOnChange}
-              placeholder={'Enter your message'}
               required
             ></textarea>
             <label className={styles.labelName}>
               <span className={styles.contentName}>Message</span>
             </label>
           </div>
-          <button type='submit'>SEND</button>
+          {/* <div>
+            <button className={styles.btn} type='submit'>
+              <FaPaperPlane size={'15px'}></FaPaperPlane>
+              <h3>SEND</h3>
+            </button>
+          </div> */}
+          <div>
+            <button className={styles.btnForm} value='submit' type='submit'>
+              <div className={styles.svgWrapper}>
+                <div className='svg-wrapper'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 24 24'
+                    width='24'
+                    height='24'
+                  >
+                    <path fill='none' d='M0 0h24v24H0z'></path>
+                    <path
+                      fill='currentColor'
+                      d='M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z'
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <span>SEND</span>
+            </button>
+          </div>
         </form>
       </div>
 
