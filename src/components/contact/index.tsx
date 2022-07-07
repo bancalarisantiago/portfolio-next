@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
               <h3>SEND</h3>
             </button>
           </div> */}
-          <div>
+          <div className={styles.btnContainer}>
             <button className={styles.btnForm} value='submit' type='submit'>
               <div className={styles.svgWrapper}>
                 <div className='svg-wrapper'>
