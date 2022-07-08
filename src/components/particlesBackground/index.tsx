@@ -1,13 +1,13 @@
 import { useTheme } from 'next-themes';
-import { useRef, useEffect } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
+import type { Engine } from 'tsparticles-engine';
 import styles from './particlesBackground.module.css';
 const ParticlesBackground: React.FC = (props) => {
   const { theme } = useTheme();
-  const background = theme === 'dark' ? '#0d1117' : '#d8dde6';
-  const particlesColor = theme === 'dark' ? '#f7df1e' : '#2d79c7';
-  const particlesInit = async (main: any) => {
+  const background: string = theme === 'dark' ? '#0d1117' : '#d8dde6';
+  const particlesColor: string = theme === 'dark' ? '#f7df1e' : '#2d79c7';
+  const particlesInit = async (main: Engine) => {
     await loadFull(main);
   };
   //const color: any = useRef();

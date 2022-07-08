@@ -5,16 +5,16 @@ import { IoIosSunny } from 'react-icons/io';
 import styles from './ToggleDarkMode.module.css';
 
 const useLoaded = () => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState<boolean>(false);
   useEffect(() => setLoaded(true), []);
   return loaded;
 };
 
 const ToggleDarkMode: React.FC = () => {
   const { theme, setTheme } = useTheme();
-  const loaded = useLoaded();
+  const loaded: boolean = useLoaded();
 
-  const toggleDarkMode = () => {
+  const toggleDarkMode = (): void => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   };
 

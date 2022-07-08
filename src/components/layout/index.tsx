@@ -8,7 +8,7 @@ interface props {
   activeLink: string;
 }
 
-const useLoaded = () => {
+const useLoaded = (): boolean => {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => setLoaded(true), []);
   return loaded;
