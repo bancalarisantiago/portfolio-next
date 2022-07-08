@@ -3,22 +3,22 @@ import ReactDOM from 'react-dom';
 import styles from './Modal.module.css';
 import Image from 'next/image';
 import Close from '../../assets/svg/close-circle_8.svg';
-interface ModalProps {
+interface IModal {
   show: boolean;
   onClose: any;
   children: any;
   title: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ show, onClose, children, title }) => {
+const Modal: React.FC<IModal> = ({ show, onClose, children, title }) => {
   const [isBrowser, setIsBrowser] = useState<boolean>(false);
 
   useEffect(() => {
     setIsBrowser(true);
   }, []);
 
-  const handleClose = (e: any) => {
-    e.preventDefault();
+  const handleClose = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     onClose();
   };
 

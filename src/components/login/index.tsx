@@ -4,7 +4,7 @@ import { signOut, signIn, useSession } from 'next-auth/react';
 const LogIn: React.FC = () => {
   const { data: session, status } = useSession();
   const user = session?.user;
-  console.log('session', user);
+
   return (
     <div className={styles.containerModal}>
       <form>

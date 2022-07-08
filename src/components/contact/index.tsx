@@ -11,7 +11,7 @@ interface IForm {
 }
 
 const Contact: React.FC = () => {
-  const formRef = useRef<any>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [form, setForm] = useState<IForm>({
     name: '',
@@ -20,14 +20,18 @@ const Contact: React.FC = () => {
     message: '',
   });
 
-  function handleInputOnChange(event: any) {
+  function handleInputOnChange(
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) {
     const { value, name } = event.target;
     if (value) {
       setForm({ ...form, [name]: value });
     }
   }
 
-  function handleOnSubmit(event: any) {
+  function handleOnSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
   }
   return (
@@ -36,7 +40,7 @@ const Contact: React.FC = () => {
         <form className={styles.form} onSubmit={handleOnSubmit} ref={formRef}>
           <div className={styles.title}>
             <h1>
-              <span> FORM </span>
+              <span> Contact Me</span>
             </h1>
           </div>
           <div className={styles.group}>
