@@ -34,10 +34,17 @@ const Contact: React.FC = () => {
   function handleOnSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
   }
+
+  console.log(form);
   return (
     <>
       <div className={styles.container}>
-        <form className={styles.form} onSubmit={handleOnSubmit} ref={formRef}>
+        <form
+          className={styles.form}
+          onSubmit={handleOnSubmit}
+          ref={formRef}
+          autoComplete='nope'
+        >
           <div className={styles.title}>
             <h1>
               <span> Contact Me</span>
@@ -47,7 +54,7 @@ const Contact: React.FC = () => {
             <input
               type='text'
               name='name'
-              autoComplete='off'
+              autoComplete='nope'
               onChange={handleInputOnChange}
               required
             />
@@ -59,7 +66,7 @@ const Contact: React.FC = () => {
             <input
               type='text'
               name='company'
-              autoComplete='off'
+              autoComplete='nope'
               onChange={handleInputOnChange}
               required
             />
@@ -71,7 +78,7 @@ const Contact: React.FC = () => {
             <input
               type='text'
               name='email'
-              autoComplete='off'
+              autoComplete='nope'
               onChange={handleInputOnChange}
               required
             />
@@ -94,8 +101,8 @@ const Contact: React.FC = () => {
           <div className={styles.groupTextarea}>
             <textarea
               name='message'
-              autoComplete='off'
               onChange={handleInputOnChange}
+              autoComplete='nope'
               required
             ></textarea>
             <label className={styles.labelName}>
@@ -126,7 +133,10 @@ const Contact: React.FC = () => {
                   </svg>
                 </div>
               </div>
-              <span>SEND</span>
+
+              <label>
+                <span>SEND</span>
+              </label>
             </button>
           </div>
         </form>
