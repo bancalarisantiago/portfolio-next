@@ -20,7 +20,11 @@ const ToggleDarkMode: React.FC = () => {
 
   return (
     <div>
-      <button className={styles.btn} onClick={toggleDarkMode}>
+      <button
+        className={styles.btn}
+        aria-label='DarkMode'
+        onClick={toggleDarkMode}
+      >
         {loaded && theme !== 'dark' ? (
           <IoIosSunny className={styles.icon} size='20px' />
         ) : (
