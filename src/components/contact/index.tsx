@@ -33,52 +33,56 @@ interface IValidation {
 }
 
 const Contact: React.FC = () => {
-  const formRef = useRef<HTMLFormElement>(null);
-  const inputName = useRef<HTMLInputElement>(null);
-  const inputCompany = useRef<HTMLInputElement>(null);
-  const inputEmail = useRef<HTMLInputElement>(null);
-  const inputMessage = useRef<HTMLTextAreaElement>(null);
+  const formRef = useRef<any>(null);
+  const inputName = useRef<HTMLInputElement>();
+  const inputCompany = useRef<HTMLInputElement>();
+  const inputEmail = useRef<HTMLInputElement>();
+  const inputMessage = useRef<HTMLTextAreaElement>();
 
-  const [form, setForm] = useState<IForm>({
-    fullName: '',
-    company: '',
-    email: '',
-    message: '',
-  });
+  // const [form, setForm] = useState<IForm>({
+  //   fullName: '',
+  //   company: '',
+  //   email: '',
+  //   message: '',
+  // });
 
-  const [validation, setValidation] = useState<IValidation>({
-    fullName: {
-      error: '',
-      valid: false,
-    },
-    company: {
-      error: '',
-      valid: false,
-    },
-    email: {
-      error: '',
-      valid: false,
-    },
-    message: {
-      error: '',
-      valid: false,
-    },
-  });
+  // const [validation, setValidation] = useState<IValidation>({
+  //   fullName: {
+  //     error: '',
+  //     valid: false,
+  //   },
+  //   company: {
+  //     error: '',
+  //     valid: false,
+  //   },
+  //   email: {
+  //     error: '',
+  //     valid: false,
+  //   },
+  //   message: {
+  //     error: '',
+  //     valid: false,
+  //   },
+  // });
 
-  function handleInputOnChange(
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) {
-    const { value, name } = event.target;
-    if (value) {
-      setForm({ ...form, [name]: value });
-      setValidation({ ...validation, [name]: { error: '', valid: true } });
-    }
-  }
+  // function handleInputOnChange(
+  //   event:
+  //     | React.ChangeEvent<HTMLInputElement>
+  //     | React.ChangeEvent<HTMLTextAreaElement>
+  // ) {
+  //   const { value, name } = event.target;
+  //   if (value) {
+  //     setForm({ ...form, [name]: value });
+  //     setValidation({ ...validation, [name]: { error: '', valid: true } });
+  //   }
+  // }
 
-  function handleOnSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleOnSubmit(event: any) {
     event.preventDefault();
+
+    const data = new FormData(event.target);
+
+    console.log(Object.fromEntries(data.entries()));
   }
 
   return (
@@ -95,12 +99,34 @@ const Contact: React.FC = () => {
               <span> Contact Me</span>
             </h1>
           </div>
-          <FormInput name={'Full name'} type={'text'} refer={inputName} />
-          <FormInput name={'Company'} type={'text'} refer={inputCompany} />
-          <FormInput name={'Email'} type={'text'} refer={inputEmail} />
-          <FormInput name={'Message'} type={'textarea'} refer={inputMessage} />
+          <FormInput
+            name='fullname'
+            placeholder={'Full name'}
+            type={'text'}
+            refer={inputName}
+          />
+          <FormInput
+            name='company'
+            placeholder={'Company'}
+            type={'text'}
+            refer={inputCompany}
+          />
+          <FormInput
+            name='email'
+            placeholder={'Email'}
+            type={'text'}
+            refer={inputEmail}
+          />
+          <FormInput
+            name='message'
+            placeholder={'Message'}
+            type={'textarea'}
+            refer={inputMessage}
+          />
+          <button>SUBMIT</button>
+        </form>
 
-          {/* 
+        {/* 
           <div className={styles.group}>
             <input
               type='text'
@@ -171,31 +197,30 @@ const Contact: React.FC = () => {
           </div>
           */}
 
-          <div className={styles.btnContainer}>
-            <button className={styles.btnForm} value='submit' type='submit'>
-              <div className={styles.svgWrapper}>
-                <div className='svg-wrapper'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 24 24'
-                    width='24'
-                    height='24'
-                  >
-                    <path fill='none' d='M0 0h24v24H0z'></path>
-                    <path
-                      fill='currentColor'
-                      d='M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z'
-                    ></path>
-                  </svg>
-                </div>
+        <div className={styles.btnContainer}>
+          <button className={styles.btnForm} type='submit'>
+            <div className={styles.svgWrapper}>
+              <div className='svg-wrapper'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  width='24'
+                  height='24'
+                >
+                  <path fill='none' d='M0 0h24v24H0z'></path>
+                  <path
+                    fill='currentColor'
+                    d='M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z'
+                  ></path>
+                </svg>
               </div>
+            </div>
 
-              <label>
-                <span>SEND</span>
-              </label>
-            </button>
-          </div>
-        </form>
+            <label>
+              <span>SEND</span>
+            </label>
+          </button>
+        </div>
       </div>
 
       {/* <div>
