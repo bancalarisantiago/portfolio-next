@@ -1,23 +1,68 @@
+import FormInput from '../input';
+
 import { useEffect, useRef, useState } from 'react';
 import styles from './Contact.module.css';
 
 //Icons
-import { FaPaperPlane } from 'react-icons/fa';
+import { FaPaperPlane, FaCheck, FaTimes } from 'react-icons/fa';
+
 interface IForm {
-  name: string;
+  fullName: string;
   company: string;
   email: string;
   message: string;
 }
 
+interface IValidation {
+  fullName: {
+    error: string;
+    valid: boolean;
+  };
+  company: {
+    error: string;
+    valid: boolean;
+  };
+  email: {
+    error: string;
+    valid: boolean;
+  };
+  message: {
+    error: string;
+    valid: boolean;
+  };
+}
+
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const inputName = useRef<HTMLInputElement>(null);
+  const inputCompany = useRef<HTMLInputElement>(null);
+  const inputEmail = useRef<HTMLInputElement>(null);
+  const inputMessage = useRef<HTMLTextAreaElement>(null);
 
   const [form, setForm] = useState<IForm>({
-    name: '',
+    fullName: '',
     company: '',
     email: '',
     message: '',
+  });
+
+  const [validation, setValidation] = useState<IValidation>({
+    fullName: {
+      error: '',
+      valid: false,
+    },
+    company: {
+      error: '',
+      valid: false,
+    },
+    email: {
+      error: '',
+      valid: false,
+    },
+    message: {
+      error: '',
+      valid: false,
+    },
   });
 
   function handleInputOnChange(
@@ -28,6 +73,7 @@ const Contact: React.FC = () => {
     const { value, name } = event.target;
     if (value) {
       setForm({ ...form, [name]: value });
+      setValidation({ ...validation, [name]: { error: '', valid: true } });
     }
   }
 
@@ -35,7 +81,6 @@ const Contact: React.FC = () => {
     event.preventDefault();
   }
 
-  console.log(form);
   return (
     <>
       <div className={styles.container}>
@@ -50,16 +95,28 @@ const Contact: React.FC = () => {
               <span> Contact Me</span>
             </h1>
           </div>
+          <FormInput name={'Full name'} type={'text'} refer={inputName} />
+          <FormInput name={'Company'} type={'text'} refer={inputCompany} />
+          <FormInput name={'Email'} type={'text'} refer={inputEmail} />
+          <FormInput name={'Message'} type={'textarea'} refer={inputMessage} />
+
+          {/* 
           <div className={styles.group}>
             <input
               type='text'
-              name='name'
+              name='fullName'
               autoComplete='nope'
               onChange={handleInputOnChange}
+              ref={inputRef}
               required
             />
             <label className={styles.labelName}>
-              <span className={styles.contentName}>Name</span>
+              <span className={styles.contentName}>Full name</span>
+              {validation.fullName.valid ? (
+                <FaCheck className={styles.icon} />
+              ) : (
+                <FaTimes className={styles.icon} />
+              )}
             </label>
           </div>
           <div className={styles.group}>
@@ -72,6 +129,11 @@ const Contact: React.FC = () => {
             />
             <label className={styles.labelName}>
               <span className={styles.contentName}>Company</span>
+              {validation.company.valid ? (
+                <FaCheck className={styles.icon} />
+              ) : (
+                <FaTimes className={styles.icon} />
+              )}
             </label>
           </div>
           <div className={styles.group}>
@@ -84,20 +146,13 @@ const Contact: React.FC = () => {
             />
             <label className={styles.labelName}>
               <span className={styles.contentName}>Email</span>
+              {validation.email.valid ? (
+                <FaCheck className={styles.icon} />
+              ) : (
+                <FaTimes className={styles.icon} />
+              )}
             </label>
           </div>
-          {/* <div className={styles.group}>
-            <textarea
-              className={styles.textarea}
-              onChange={handleInputOnChange}
-              ref={textarea}
-              rows={40}
-              cols={40}
-            ></textarea>
-            <label className={styles.labelName}>
-              <span className={styles.contentName}>Message</span>
-            </label>
-          </div> */}
           <div className={styles.groupTextarea}>
             <textarea
               name='message'
@@ -107,14 +162,15 @@ const Contact: React.FC = () => {
             ></textarea>
             <label className={styles.labelName}>
               <span className={styles.contentName}>Message</span>
+              {validation.message.valid ? (
+                <FaCheck className={styles.icon} />
+              ) : (
+                <FaTimes className={styles.icon} />
+              )}
             </label>
           </div>
-          {/* <div>
-            <button className={styles.btn} type='submit'>
-              <FaPaperPlane size={'15px'}></FaPaperPlane>
-              <h3>SEND</h3>
-            </button>
-          </div> */}
+          */}
+
           <div className={styles.btnContainer}>
             <button className={styles.btnForm} value='submit' type='submit'>
               <div className={styles.svgWrapper}>
