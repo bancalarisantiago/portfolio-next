@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
           </div>
           */}
 
-        <div className={styles.btnContainer}>
+        {/* <div className={styles.btnContainer}>
           <button className={styles.btnForm} type='submit'>
             <div className={styles.svgWrapper}>
               <div className='svg-wrapper'>
@@ -220,7 +220,7 @@ const Contact: React.FC = () => {
               <span>SEND</span>
             </label>
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* <div>
