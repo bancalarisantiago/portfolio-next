@@ -19,6 +19,7 @@
   left: 48%;
   top: 40%;
 }
+
 .group input {
   width: 100%;
   height: 100%;
@@ -119,4 +120,12 @@
 
 .groupTextarea textarea::-webkit-scrollbar-thumb {
   background-color: var(--color-text);
+}
+
+.errorMessage {
+  position: absolute;
+  width: 75%;
+  color: red;
+  font-size: 0.7rem;
+  right: 15px;
 }

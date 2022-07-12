@@ -6,13 +6,13 @@ import styles from './Contact.module.css';
 //Icons
 import { FaPaperPlane, FaCheck, FaTimes } from 'react-icons/fa';
 
-interface IForm {
-  fullName: string;
-  company: string;
-  email: string;
-  message: string;
+interface Input {
+  id: number;
+  name: string;
+  type: string;
+  label: string;
+  errorMessage?: string;
 }
-
 interface IValidation {
   fullName: {
     error: string;
@@ -33,19 +33,49 @@ interface IValidation {
 }
 
 const Contact: React.FC = () => {
-  const formRef = useRef<any>(null);
-  const inputName = useRef<HTMLInputElement>();
-  const inputCompany = useRef<HTMLInputElement>();
-  const inputEmail = useRef<HTMLInputElement>();
-  const inputMessage = useRef<HTMLTextAreaElement>();
+  // const inputName = useRef<HTMLInputElement>();
+  // const inputCompany = useRef<HTMLInputElement>();
+  // const inputEmail = useRef<HTMLInputElement>();
+  // const inputMessage = useRef<HTMLTextAreaElement>();
 
-  // const [form, setForm] = useState<IForm>({
-  //   fullName: '',
-  //   company: '',
-  //   email: '',
-  //   message: '',
-  // });
+  const [form, setForm] = useState<any>({
+    fullName: '',
+    company: '',
+    email: '',
+    message: '',
+  });
 
+  const inputs: Input[] = [
+    {
+      id: 1,
+      name: 'fullName',
+      label: 'Full Name',
+      type: 'text',
+      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
+    },
+    {
+      id: 2,
+      name: 'company',
+      label: 'Company',
+      type: 'text',
+      errorMessage: 'Company should should be 3-16 characters',
+    },
+    {
+      id: 3,
+      name: 'email',
+      label: 'Email',
+      type: 'text',
+      errorMessage: 'It should be a valid email address!',
+    },
+    {
+      id: 4,
+      name: 'message',
+      label: 'Message',
+      type: 'textarea',
+      errorMessage:
+        'Min characters for message should be more than 20 characters',
+    },
+  ];
   // const [validation, setValidation] = useState<IValidation>({
   //   fullName: {
   //     error: '',
@@ -65,25 +95,22 @@ const Contact: React.FC = () => {
   //   },
   // });
 
-  // function handleInputOnChange(
-  //   event:
-  //     | React.ChangeEvent<HTMLInputElement>
-  //     | React.ChangeEvent<HTMLTextAreaElement>
-  // ) {
-  //   const { value, name } = event.target;
-  //   if (value) {
-  //     setForm({ ...form, [name]: value });
-  //     setValidation({ ...validation, [name]: { error: '', valid: true } });
-  //   }
-  // }
+  function handleInputOnChange(
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) {
+    const { value, name } = event.target;
+
+    setForm({ ...form, [name]: value });
+    // setValidation({ ...validation, [name]: { error: '', valid: true } });
+  }
 
   function handleOnSubmit(event: any) {
     event.preventDefault();
-
-    const data = new FormData(event.target);
-
-    console.log(Object.fromEntries(data.entries()));
   }
+
+  console.log(form);
 
   return (
     <>
@@ -91,7 +118,6 @@ const Contact: React.FC = () => {
         <form
           className={styles.form}
           onSubmit={handleOnSubmit}
-          ref={formRef}
           autoComplete='nope'
         >
           <div className={styles.title}>
@@ -99,104 +125,16 @@ const Contact: React.FC = () => {
               <span> Contact Me</span>
             </h1>
           </div>
-          <FormInput
-            name='fullname'
-            placeholder={'Full name'}
-            type={'text'}
-            refer={inputName}
-          />
-          <FormInput
-            name='company'
-            placeholder={'Company'}
-            type={'text'}
-            refer={inputCompany}
-          />
-          <FormInput
-            name='email'
-            placeholder={'Email'}
-            type={'text'}
-            refer={inputEmail}
-          />
-          <FormInput
-            name='message'
-            placeholder={'Message'}
-            type={'textarea'}
-            refer={inputMessage}
-          />
+          {inputs.map((input) => (
+            <FormInput
+              {...input}
+              key={input.id}
+              value={form[input.name]}
+              onChange={handleInputOnChange}
+            />
+          ))}
           <button>SUBMIT</button>
         </form>
-
-        {/* 
-          <div className={styles.group}>
-            <input
-              type='text'
-              name='fullName'
-              autoComplete='nope'
-              onChange={handleInputOnChange}
-              ref={inputRef}
-              required
-            />
-            <label className={styles.labelName}>
-              <span className={styles.contentName}>Full name</span>
-              {validation.fullName.valid ? (
-                <FaCheck className={styles.icon} />
-              ) : (
-                <FaTimes className={styles.icon} />
-              )}
-            </label>
-          </div>
-          <div className={styles.group}>
-            <input
-              type='text'
-              name='company'
-              autoComplete='nope'
-              onChange={handleInputOnChange}
-              required
-            />
-            <label className={styles.labelName}>
-              <span className={styles.contentName}>Company</span>
-              {validation.company.valid ? (
-                <FaCheck className={styles.icon} />
-              ) : (
-                <FaTimes className={styles.icon} />
-              )}
-            </label>
-          </div>
-          <div className={styles.group}>
-            <input
-              type='text'
-              name='email'
-              autoComplete='nope'
-              onChange={handleInputOnChange}
-              required
-            />
-            <label className={styles.labelName}>
-              <span className={styles.contentName}>Email</span>
-              {validation.email.valid ? (
-                <FaCheck className={styles.icon} />
-              ) : (
-                <FaTimes className={styles.icon} />
-              )}
-            </label>
-          </div>
-          <div className={styles.groupTextarea}>
-            <textarea
-              name='message'
-              onChange={handleInputOnChange}
-              autoComplete='nope'
-              required
-            ></textarea>
-            <label className={styles.labelName}>
-              <span className={styles.contentName}>Message</span>
-              {validation.message.valid ? (
-                <FaCheck className={styles.icon} />
-              ) : (
-                <FaTimes className={styles.icon} />
-              )}
-            </label>
-          </div>
-          */}
-
         {/* <div className={styles.btnContainer}>
           <button className={styles.btnForm} type='submit'>
             <div className={styles.svgWrapper}>
@@ -222,32 +160,6 @@ const Contact: React.FC = () => {
           </button>
         </div> */}
       </div>
-
-      {/* <div>
-                <input type='text' autoComplete='off' required />
-                <label className={styles.labelName}>
-                  <span className={styles.contentName}>Name</span>
-                </label>
-              </div> */}
-
-      {/* <div className={styles.group}>
-                <label className={styles.label}>
-                  <span> Name</span>
-                  <input type='text' className={styles.input} required />
-                </label>
-              </div>
-              <label>
-                Company
-                <input type='text' />
-              </label>
-              <label>
-                Email
-                <input type='email' />
-              </label>
-              <label>
-                Message
-                <textarea />
-              </label> */}
     </>
   );
 };
