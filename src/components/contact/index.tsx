@@ -6,13 +6,6 @@ import styles from './Contact.module.css';
 //Icons
 import { FaPaperPlane, FaCheck, FaTimes } from 'react-icons/fa';
 
-interface Input {
-  id: number;
-  name: string;
-  type: string;
-  label: string;
-  errorMessage?: string;
-}
 interface IValidation {
   fullName: {
     error: string;
@@ -45,7 +38,7 @@ const Contact: React.FC = () => {
     message: '',
   });
 
-  const inputs: Input[] = [
+  const inputs: any[] = [
     {
       id: 1,
       name: 'fullName',
