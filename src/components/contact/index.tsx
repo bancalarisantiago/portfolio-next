@@ -31,6 +31,8 @@ const Contact: React.FC = () => {
   // const inputEmail = useRef<HTMLInputElement>();
   // const inputMessage = useRef<HTMLTextAreaElement>();
 
+  const testInput = useRef<HTMLInputElement>(null);
+
   const [form, setForm] = useState<any>({
     fullName: '',
     company: '',
@@ -44,20 +46,24 @@ const Contact: React.FC = () => {
       name: 'fullName',
       label: 'Full Name',
       type: 'text',
+      required: true,
       errorMessage: `Full name should be 3-16 characters and should't use special characters`,
+      pattern: '^[A-Za-z0-9]{3,16}$',
     },
     {
       id: 2,
       name: 'company',
       label: 'Company',
       type: 'text',
-      errorMessage: 'Company should should be 3-16 characters',
+      required: true,
+      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
     },
     {
       id: 3,
       name: 'email',
       label: 'Email',
       type: 'text',
+      required: true,
       errorMessage: 'It should be a valid email address!',
     },
     {
@@ -65,6 +71,7 @@ const Contact: React.FC = () => {
       name: 'message',
       label: 'Message',
       type: 'textarea',
+      required: true,
       errorMessage:
         'Min characters for message should be more than 20 characters',
     },
@@ -88,6 +95,13 @@ const Contact: React.FC = () => {
   //   },
   // });
 
+  let name = document.getElementById('name');
+  name!.addEventListener('input', function (e) {
+    name!.setCustomValidity(''); //remove message when new text is input
+  });
+  name!.addEventListener('invalid', function (e) {
+    name!.setCustomValidity('Please enter your full name'); //custom validation message for invalid text
+  });
   function handleInputOnChange(
     event:
       | React.ChangeEvent<HTMLInputElement>
@@ -97,13 +111,13 @@ const Contact: React.FC = () => {
 
     setForm({ ...form, [name]: value });
     // setValidation({ ...validation, [name]: { error: '', valid: true } });
+
+    console.log(testInput.current!.validity.customError);
   }
 
   function handleOnSubmit(event: any) {
     event.preventDefault();
   }
-
-  console.log(form);
 
   return (
     <>
@@ -118,6 +132,7 @@ const Contact: React.FC = () => {
               <span> Contact Me</span>
             </h1>
           </div>
+          <input id='name' ref={testInput} required />
           {inputs.map((input) => (
             <FormInput
               {...input}
