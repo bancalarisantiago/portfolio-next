@@ -129,11 +129,3 @@
   font-size: 0.7rem;
   right: 15px;
 }
-
-.group input:invalid ~ p {
-  display: none;
-}
-
-.group input:invalid ~ p {
-  color: white;
-}
