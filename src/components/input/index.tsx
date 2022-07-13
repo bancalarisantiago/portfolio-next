@@ -1,5 +1,6 @@
 import styles from './Input.module.css';
 import { FaPaperPlane, FaCheck, FaTimes } from 'react-icons/fa';
+import { useEffect, useRef } from 'react';
 
 interface IProps {
   type: string;
@@ -7,18 +8,27 @@ interface IProps {
   onChange: any;
   value: any;
   label: string;
-  errorMessage: string;
+  required?: boolean;
+  errorMessage?: string;
 }
 
 const FormInput: React.FC<IProps> = (props) => {
+  const inputRef = useRef<any>(null);
+
+  // useEffect(() => {
+  //   if (inputRef) {
+  //     inputRef?.current?.setCustomValidity(props.errorMessage);
+  //   }
+  // }, []);
+
   return (
     <div
       className={props.type === 'text' ? styles.group : styles.groupTextarea}
     >
       {props.type === 'text' ? (
-        <input {...props} required />
+        <input {...props} ref={inputRef} />
       ) : (
-        <textarea {...props} required />
+        <textarea {...props} />
       )}
 
       <label className={styles.labelName}>
@@ -26,10 +36,7 @@ const FormInput: React.FC<IProps> = (props) => {
         {false ? (
           <FaCheck className={styles.icon} />
         ) : (
-          <>
-            <FaTimes className={styles.icon} />
-            {/* <span className={styles.errorMessage}>{props.errorMessage}</span> */}
-          </>
+          <FaTimes className={styles.icon} />
         )}
       </label>
     </div>

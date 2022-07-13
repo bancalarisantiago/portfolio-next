@@ -44,28 +44,33 @@ const Contact: React.FC = () => {
       name: 'fullName',
       label: 'Full Name',
       type: 'text',
-      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
+      required: true,
+      errormessage: `Full name should be 3-16 characters and should't use special characters`,
+      pattern: '^[A-Za-z0-9]{3,16}$',
     },
     {
       id: 2,
       name: 'company',
       label: 'Company',
       type: 'text',
-      errorMessage: 'Company should should be 3-16 characters',
+      required: true,
+      errormessage: `Full name should be 3-16 characters and should't use special characters`,
     },
     {
       id: 3,
       name: 'email',
       label: 'Email',
       type: 'text',
-      errorMessage: 'It should be a valid email address!',
+      required: true,
+      errormessage: 'It should be a valid email address!',
     },
     {
       id: 4,
       name: 'message',
       label: 'Message',
       type: 'textarea',
-      errorMessage:
+      required: true,
+      errormessage:
         'Min characters for message should be more than 20 characters',
     },
   ];
@@ -101,9 +106,8 @@ const Contact: React.FC = () => {
 
   function handleOnSubmit(event: any) {
     event.preventDefault();
+    console.log(form);
   }
-
-  console.log(form);
 
   return (
     <>
@@ -118,6 +122,7 @@ const Contact: React.FC = () => {
               <span> Contact Me</span>
             </h1>
           </div>
+
           {inputs.map((input) => (
             <FormInput
               {...input}
@@ -126,32 +131,31 @@ const Contact: React.FC = () => {
               onChange={handleInputOnChange}
             />
           ))}
-          <button>SUBMIT</button>
-        </form>
-        {/* <div className={styles.btnContainer}>
-          <button className={styles.btnForm} type='submit'>
-            <div className={styles.svgWrapper}>
-              <div className='svg-wrapper'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 24 24'
-                  width='24'
-                  height='24'
-                >
-                  <path fill='none' d='M0 0h24v24H0z'></path>
-                  <path
-                    fill='currentColor'
-                    d='M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z'
-                  ></path>
-                </svg>
+          <div className={styles.btnContainer}>
+            <button className={styles.btnForm} type='submit'>
+              <div className={styles.svgWrapper}>
+                <div className='svg-wrapper'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 24 24'
+                    width='24'
+                    height='24'
+                  >
+                    <path fill='none' d='M0 0h24v24H0z'></path>
+                    <path
+                      fill='currentColor'
+                      d='M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z'
+                    ></path>
+                  </svg>
+                </div>
               </div>
-            </div>
 
-            <label>
-              <span>SEND</span>
-            </label>
-          </button>
-        </div> */}
+              <label>
+                <span>SEND</span>
+              </label>
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );
