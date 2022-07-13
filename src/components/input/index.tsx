@@ -13,23 +13,11 @@ interface IProps {
 }
 
 const FormInput: React.FC<IProps> = (props) => {
-  const inputRef = useRef<any>(null);
-
-  // useEffect(() => {
-  //   if (inputRef) {
-  //     inputRef?.current?.setCustomValidity(props.errorMessage);
-  //   }
-  // }, []);
-
   return (
     <div
       className={props.type === 'text' ? styles.group : styles.groupTextarea}
     >
-      {props.type === 'text' ? (
-        <input {...props} ref={inputRef} />
-      ) : (
-        <textarea {...props} />
-      )}
+      {props.type === 'text' ? <input {...props} /> : <textarea {...props} />}
 
       <label className={styles.labelName}>
         <span className={styles.contentName}>{props.label}</span>

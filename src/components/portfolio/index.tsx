@@ -1,4 +1,5 @@
 import styles from './Portfolio.module.css';
+import Card from '../card';
 
 const Portfolio = () => {
   return (
@@ -8,6 +9,7 @@ const Portfolio = () => {
           <h1>
             <span> PORFTOLIO </span>
           </h1>
+          <Card />
         </div>
       </div>
     </>

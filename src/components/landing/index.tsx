@@ -1,9 +1,10 @@
 //import Illustration from '../../assets/illustrationalanding.png';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { BiDownload } from 'react-icons/bi';
 import styles from './Landing.module.css';
 
 import Link from 'next/link';
+import { HiMail } from 'react-icons/hi';
 
 const Landing: React.FC = () => {
   return (
@@ -38,6 +39,10 @@ const Landing: React.FC = () => {
             </Link>
           </div>
         </div>
+        {/* <div>
+          <h1>FIND ME ON</h1>
+          <h4>Fell free to connect with me</h4>
+        </div> */}
       </div>
     </>
   );
