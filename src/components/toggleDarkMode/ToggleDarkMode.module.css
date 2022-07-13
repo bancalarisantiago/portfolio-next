@@ -16,6 +16,11 @@
   border: none;
 }
 
+.btn span {
+  margin: 5px;
+  font-size: 1rem;
+}
+
 /* .btn:hover {
   transform: scale(1.5);
   transition-duration: 1s;

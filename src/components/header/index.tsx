@@ -93,9 +93,9 @@ const Header: React.FC<Props> = ({ activeLink }) => {
         </div>
 
         <div className={styles.btnLogin}>
-          <button className={styles.btn} id='menu_btn' onClick={toggleModal}>
+          {/* <button className={styles.btn} id='menu_btn' onClick={toggleModal}>
             LOGIN
-          </button>
+          </button> */}
           <ToggleDarkMode />
         </div>
       </nav>

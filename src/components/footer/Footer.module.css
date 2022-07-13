@@ -1,6 +1,9 @@
 .container {
   background-color: var(--color-bg-layout);
   position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -10,7 +13,6 @@
 }
 
 .icons {
-  margin: 0.5rem auto;
   color: var(--color-text);
 }
 
