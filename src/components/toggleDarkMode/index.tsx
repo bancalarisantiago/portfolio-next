@@ -25,15 +25,15 @@ const ToggleDarkMode: React.FC = () => {
         aria-label='DarkMode'
         onClick={toggleDarkMode}
       >
-        {loaded && theme !== 'dark' ? (
+        {loaded && theme === 'dark' ? (
           <>
             <IoIosSunny className={styles.icon} size='20px' />
-            <span>Light</span>
+            <span>Go light</span>
           </>
         ) : (
           <>
             <FaMoon className={styles.icon} size='18px' />
-            <span>Dark</span>
+            <span>Go dark</span>
           </>
         )}
       </button>

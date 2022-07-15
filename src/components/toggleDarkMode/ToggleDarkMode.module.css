@@ -13,15 +13,17 @@
   align-items: center;
   background-color: transparent;
   cursor: pointer;
-  border: none;
+  border: 1.5px solid transparent;
 }
 
 .btn span {
   margin: 5px;
   font-size: 1rem;
+  font-family: 'Montserrat';
+  font-weight: 500;
 }
 
-/* .btn:hover {
-  transform: scale(1.5);
-  transition-duration: 1s;
-} */
+.btn:hover {
+  border: 1.5px solid var(--color-primary);
+  transition: 1s;
+}
