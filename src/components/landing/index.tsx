@@ -15,8 +15,8 @@ const Landing: React.FC = () => {
             &lt;&gt; Hi, I &apos; m <span> SANTIAGO </span>&lt;/&gt;
           </h1>
           <p>
-            &lt;&gt; A passionate <strong>Full Stack Developer</strong> and
-            <strong>Audiovisual Designer</strong> having an experience of
+            &lt;&gt; A passionate <strong> Full Stack Developer </strong> and
+            <strong> Audiovisual Designer </strong> having an experience of
             building responsive Web applications with JavaScript / Reactjs /
             Nodejs and some other cool libraries and frameworks.&lt;/&gt;
           </p>

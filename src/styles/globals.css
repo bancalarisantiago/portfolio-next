@@ -4,7 +4,7 @@
 :root {
   --color-text: #26292e;
   --color-primary: #2d79c7;
-  --color-primary-strong: #1d5fb3;
+  --color-primary-strong: #296db3;
   --color-bg-layout: #edf3ff;
   --color-black-gray: #0d1117;
   --color-primary-darkMode: #f7df1e;
@@ -13,7 +13,7 @@
 [data-theme='dark'] {
   --color-text: #fafafa;
   --color-primary: #f7df1e;
-  --color-primary-strong: #bfa40b;
+  --color-primary-strong: #d7c21a;
   --color-bg-layout: #161b22;
   --color-primary-darkMode: #2d79c7;
 }
@@ -42,3 +42,12 @@ input:-webkit-autofill:active {
   transition: background-color 5000s;
   -webkit-text-fill-color: var(--color-text) !important;
 }
+
+/* 
+FULL COLOR PALETTE ~ TINT AND SHADE GENERATOR
+
+0%	10%	20%	30%	40%	50%	60%	70%	80%	90%	100%
+2d79c7	296db3	24619f	1f558b	1b4977	173d64	123050	0d243c	091828	040c14	000000
+2d79c7	4286cd	5794d2	6ca1d8	81afdd	96bce3	abc9e9	c0d7ee	d5e4f4	eaf2f9	ffffff
+f7df1e	dec91b	c6b218	ad9c15	948612	7c700f	63590c	4a4309	312d06	191603	000000
+f7df1e	f8e235	f9e54b	f9e962	faec78	fbef8f	fcf2a5	fdf5bc	fdf9d2	fefce9	ffffff */

@@ -17,7 +17,7 @@
   z-index: 2;
   max-width: 600px;
   bottom: 0;
-  text-align: justify;
+  line-height: 1.5;
 }
 
 .title {
@@ -28,6 +28,7 @@
 .title p {
   font-size: 1.3rem;
   font-weight: 300;
+  letter-spacing: 0.5px;
 }
 .title span {
   font-family: 'Bebas Neue';
@@ -37,6 +38,7 @@
 .title h1 {
   font-family: 'Montserrat';
   font-size: 2.5rem;
+  letter-spacing: -2px;
 }
 
 .btnContainer {
