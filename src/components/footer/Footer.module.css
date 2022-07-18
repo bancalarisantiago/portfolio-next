@@ -11,7 +11,9 @@
   color: white;
   text-align: center;
 }
-
+.container span {
+  color: var(--color-text);
+}
 .icons {
   color: var(--color-text);
 }

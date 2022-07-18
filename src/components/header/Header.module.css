@@ -32,7 +32,7 @@
   position: relative;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .a::before {
@@ -93,6 +93,14 @@
 
 .icon {
   margin: -2px 4px;
+}
+.logo {
+  width: 110px;
+  display: flex;
+  justify-content: center;
+}
+.logo h1 {
+  color: var(--color-primary);
 }
 
 @media (max-width: 660px) {
