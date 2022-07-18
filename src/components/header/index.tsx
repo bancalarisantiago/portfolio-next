@@ -27,16 +27,13 @@ const Header: React.FC<Props> = ({ activeLink }) => {
   return (
     <header className={styles.container}>
       <nav className={styles.containerNav}>
-        {/* <div>
-            <Image
-              className={styles.logo}
-              layout='fixed'
-              width={200}
-              height={100}
-              src={Logo}
-              alt='logo-saba'
-            />
-          </div> */}
+        <div className={styles.logo}>
+          <Link href='/'>
+            <a>
+              <h1>SB</h1>
+            </a>
+          </Link>
+        </div>
         <div className={styles.containerLinks}>
           <div className={styles.containerLi}>
             <Link href='/'>
