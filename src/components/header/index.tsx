@@ -28,7 +28,11 @@ const Header: React.FC<Props> = ({ activeLink }) => {
     <header className={styles.container}>
       <nav className={styles.containerNav}>
         <div className={styles.logo}>
-          <h1>SB</h1>
+          <Link href='/'>
+            <a>
+              <h1>SB</h1>
+            </a>
+          </Link>
         </div>
         <div className={styles.containerLinks}>
           <div className={styles.containerLi}>

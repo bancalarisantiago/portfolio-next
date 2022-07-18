@@ -99,6 +99,9 @@
   display: flex;
   justify-content: center;
 }
+.logo a {
+  text-decoration: none;
+}
 .logo h1 {
   color: var(--color-primary);
 }
