@@ -16,12 +16,12 @@ const Card: React.FC = () => (
       ></Image>
       <h6>RUBRIT - Services App</h6>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolores,
-        labore sequi eligendi hic sint voluptates omnis tenetur quas laboriosam
-        quisquam mollitia minima perspiciatis nesciunt aut voluptatem! Quos,
-        nisi obcaecati sequi debitis aliquid ducimus vitae!
+        Rubrit was born from the need for those people to offer their services
+        in an area where formal work is scarce. We seek to provide ease to all
+        users who want to offer or hire reliable services.
       </p>
       <div>TECONOLOGIAS</div>
+      <p>TypeScript - NextJS - MongoDB - AWS</p>
       <Link href='https://drive.google.com/file/d/18W9rsevgokD0bSujLuE7MUKS_i3Kfnj8/view?usp=sharing'>
         <a target='_blank'>
           <button className={styles.btn}>
