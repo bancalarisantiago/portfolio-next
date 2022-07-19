@@ -2,23 +2,31 @@
   background-color: var(--color-bg-layout);
   position: fixed;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 40px;
   color: white;
+  font-family: 'Montserrat';
+  font-size: 0.8rem;
   text-align: center;
 }
+
 .container span {
   color: var(--color-text);
 }
 .icons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
   color: var(--color-text);
 }
 
 .icons a {
+  margin: 0;
   color: var(--color-text);
   text-decoration: none;
 }
