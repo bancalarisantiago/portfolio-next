@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-animation: zoomOut 5s ease-in-out;
-  animation: zoomOut 5s ease-in-out;
+  -webkit-animation: zoomOut 600ms ease-in-out;
+  animation: zoomOut 600ms ease-in-out;
 }
 .title {
   position: relative;
@@ -21,8 +21,8 @@
 }
 
 .title {
-  -webkit-animation: all 5s ease-in-out;
-  animation: fadeIn 5s ease-in-out;
+  -webkit-animation: all 600ms ease-in-out;
+  animation: fadeIn 600ms ease-in-out;
 }
 
 .title p {
