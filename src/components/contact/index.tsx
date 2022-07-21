@@ -1,3 +1,5 @@
+import emailjs from 'emailjs-com';
+
 import FormInput from '../input';
 
 import { useEffect, useRef, useState } from 'react';
@@ -30,6 +32,9 @@ const Contact: React.FC = () => {
   // const inputCompany = useRef<HTMLInputElement>();
   // const inputEmail = useRef<HTMLInputElement>();
   // const inputMessage = useRef<HTMLTextAreaElement>();
+  emailjs.init('sDLDgBQtD2iR4heUt');
+  const serviceId = 'porfoliosb931986';
+  const templateId = 'template_81g5oed';
 
   const [form, setForm] = useState<any>({
     fullName: '',
@@ -104,9 +109,42 @@ const Contact: React.FC = () => {
     // setValidation({ ...validation, [name]: { error: '', valid: true } });
   }
 
+  const templateParams = {
+    fullName: form.fullName,
+    company: form.company,
+    email: form.email,
+    message: form.message,
+  };
+
   function handleOnSubmit(event: any) {
     event.preventDefault();
-    console.log(form);
+
+    // emailjs.send(
+    //   process.env.EMAIL_JS_SERVICE,
+    //   process.env.EMAIL_JS_TEMPLATE,
+    //   params,
+    //   process.env.EMAIL_JS_USER,
+    // )
+
+    emailjs.send(serviceId, templateId, templateParams).then(
+      ({ status }) => {
+        if (status === 200) {
+          console.log(status);
+          //setFormSubmitted({ title: 'Message has been sent', paragraph: 'Mike will be in contact with you soon.' });
+          console.log('Mike will be in contact with you soon.');
+        } else {
+          console.log(
+            'Unexpected status code returned from EmailJS, try again later'
+          );
+          // setFormSubmitted({ title: 'Unexpected status code returned from EmailJS, try again later', paragraph: 'Please contact Mike either by phone or email.' });
+        }
+      },
+      (err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+        //setFormSubmitted({ title: 'Error sending message, try again later', paragraph: 'Please contact Mike either by phone or email.' });
+      }
+    );
   }
 
   return (
