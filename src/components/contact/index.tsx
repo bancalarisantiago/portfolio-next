@@ -48,8 +48,7 @@ const Contact: React.FC<Props> = ({ keys }) => {
       label: 'Full Name',
       type: 'text',
       required: true,
-      errormessage: `Full name should be 3-16 characters and should't use special characters`,
-      pattern: '^[A-Za-z0-9]{3,16}$',
+      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
     },
     {
       id: 2,
@@ -57,7 +56,7 @@ const Contact: React.FC<Props> = ({ keys }) => {
       label: 'Company',
       type: 'text',
       required: true,
-      errormessage: `Full name should be 3-16 characters and should't use special characters`,
+      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
     },
     {
       id: 3,
@@ -65,7 +64,7 @@ const Contact: React.FC<Props> = ({ keys }) => {
       label: 'Email',
       type: 'text',
       required: true,
-      errormessage: 'It should be a valid email address!',
+      errorMessage: 'It should be a valid email address!',
     },
     {
       id: 4,
@@ -73,7 +72,7 @@ const Contact: React.FC<Props> = ({ keys }) => {
       label: 'Message',
       type: 'textarea',
       required: true,
-      errormessage:
+      errorMessage:
         'Min characters for message should be more than 20 characters',
     },
   ];
@@ -150,7 +149,7 @@ const Contact: React.FC<Props> = ({ keys }) => {
         >
           <div className={styles.title}>
             <h1>
-              <span> Contact Me</span>
+              <span> SEND ME A MESSAGE</span>
             </h1>
           </div>
 

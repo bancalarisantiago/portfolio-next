@@ -21,11 +21,20 @@ const FormInput: React.FC<IProps> = (props) => {
 
       <label className={styles.labelName}>
         <span className={styles.contentName}>{props.label}</span>
+        {/* <p
+          className={
+            props.type === 'text'
+              ? styles.errorMessage
+              : styles.errorMessageTextarea
+          }
+        >
+          {props.errorMessage}
+        </p>
         {false ? (
           <FaCheck className={styles.icon} />
         ) : (
           <FaTimes className={styles.icon} />
-        )}
+        )} */}
       </label>
     </div>
   );
