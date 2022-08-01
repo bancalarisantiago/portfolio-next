@@ -7,7 +7,11 @@ import styles from './Contact.module.css';
 
 //Icons
 import { FaPaperPlane, FaCheck, FaTimes } from 'react-icons/fa';
+//Credentials EmailJS
 
+interface Props {
+  keys: any;
+}
 interface IValidation {
   fullName: {
     error: string;
@@ -27,14 +31,8 @@ interface IValidation {
   };
 }
 
-const Contact: React.FC = () => {
-  // const inputName = useRef<HTMLInputElement>();
-  // const inputCompany = useRef<HTMLInputElement>();
-  // const inputEmail = useRef<HTMLInputElement>();
-  // const inputMessage = useRef<HTMLTextAreaElement>();
-  emailjs.init('sDLDgBQtD2iR4heUt');
-  const serviceId = 'porfoliosb931986';
-  const templateId = 'template_81g5oed';
+const Contact: React.FC<Props> = ({ keys }) => {
+  const { emailJsApiKey, emailJsServiceId, emailJsTemplateId } = keys;
 
   const [form, setForm] = useState<any>({
     fullName: '',
@@ -50,8 +48,7 @@ const Contact: React.FC = () => {
       label: 'Full Name',
       type: 'text',
       required: true,
-      errormessage: `Full name should be 3-16 characters and should't use special characters`,
-      pattern: '^[A-Za-z0-9]{3,16}$',
+      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
     },
     {
       id: 2,
@@ -59,7 +56,7 @@ const Contact: React.FC = () => {
       label: 'Company',
       type: 'text',
       required: true,
-      errormessage: `Full name should be 3-16 characters and should't use special characters`,
+      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
     },
     {
       id: 3,
@@ -67,7 +64,7 @@ const Contact: React.FC = () => {
       label: 'Email',
       type: 'text',
       required: true,
-      errormessage: 'It should be a valid email address!',
+      errorMessage: 'It should be a valid email address!',
     },
     {
       id: 4,
@@ -75,10 +72,12 @@ const Contact: React.FC = () => {
       label: 'Message',
       type: 'textarea',
       required: true,
-      errormessage:
+      errorMessage:
         'Min characters for message should be more than 20 characters',
     },
   ];
+
+  emailjs.init(emailJsApiKey);
   // const [validation, setValidation] = useState<IValidation>({
   //   fullName: {
   //     error: '',
@@ -119,14 +118,7 @@ const Contact: React.FC = () => {
   function handleOnSubmit(event: any) {
     event.preventDefault();
 
-    // emailjs.send(
-    //   process.env.EMAIL_JS_SERVICE,
-    //   process.env.EMAIL_JS_TEMPLATE,
-    //   params,
-    //   process.env.EMAIL_JS_USER,
-    // )
-
-    emailjs.send(serviceId, templateId, templateParams).then(
+    emailjs.send(emailJsServiceId, emailJsTemplateId, templateParams).then(
       ({ status }) => {
         if (status === 200) {
           console.log(status);
@@ -157,7 +149,7 @@ const Contact: React.FC = () => {
         >
           <div className={styles.title}>
             <h1>
-              <span> Contact Me</span>
+              <span> SEND ME A MESSAGE</span>
             </h1>
           </div>
 
