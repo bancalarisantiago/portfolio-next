@@ -59,7 +59,7 @@ const Card: React.FC = () => (
                 </button>
               </a>
             </Link>
-            <Link href='https://github.com/bancalarisantiago/Rubrit-App'>
+            <Link href={github}>
               <a target='_blank'>
                 <button className={`${styles.btn} ${styles.btnGithub}`}>
                   <FaGithub size={'15px'} />

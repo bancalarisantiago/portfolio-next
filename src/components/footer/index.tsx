@@ -6,6 +6,12 @@ import { HiMail } from 'react-icons/hi';
 import { RiWhatsappFill } from 'react-icons/ri';
 import Link from 'next/link';
 const Footer: React.FC = () => {
+  function sendEmail() {
+    window.open(
+      'mailto:bancalarisantiago@gmail.com?subject=Contact&body=Insert your message'
+    );
+  }
+
   return (
     <footer className={styles.container}>
       <div>
@@ -34,14 +40,10 @@ const Footer: React.FC = () => {
           </Link>
         </div>
         <div>
-          <Link href='/'>
-            <a target='_black'>
-              <HiMail className={styles.icon} size={'22px'} />
-            </a>
-          </Link>
+          <HiMail onClick={sendEmail} className={styles.icon} size={'22px'} />
         </div>
         <div>
-          <Link href='/'>
+          <Link href='https://wa.me/5491164557977'>
             <a target='_black'>
               <RiWhatsappFill className={styles.icon} size={'20px'} />
             </a>
