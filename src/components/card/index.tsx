@@ -4,10 +4,10 @@ import { BiDownload } from 'react-icons/bi';
 import { FaGithub } from 'react-icons/fa';
 import Rubrit from '../../assets/images/landing.jpg';
 import styles from './Card.module.css';
-
+import imageRubrit from '/public/landing.jpg';
 interface IProject {
   title: string;
-  img: string;
+  img: any;
   description: string;
   technologies: string[];
   url: string;
@@ -17,7 +17,7 @@ interface IProject {
 const projects: [IProject] = [
   {
     title: 'RUBRIT - Services App',
-    img: '/../../public/landing.jpg',
+    img: imageRubrit,
     description:
       'Rubrit was born from the need for those people to offer their services in an area where formal work is scarce. We seek to provide ease to all users who want to offer or hire reliable services.',
     technologies: ['TypeScript', 'NextJS', 'MongoDB', 'AWS'],
@@ -41,7 +41,7 @@ const Card: React.FC = () => (
             <h6>{title}</h6>
             <p>{description}</p>
             <div>
-              <h5>TECONOLOGIAS</h5>
+              <h5 style={{ margin: 0 }}>TECONOLOGIAS</h5>
               <div className={styles.technologies}>
                 {technologies.map((tech) => (
                   <>
@@ -50,23 +50,24 @@ const Card: React.FC = () => (
                 ))}
               </div>
             </div>
-
-            <Link href={url}>
-              <a target='_blank'>
-                <button className={styles.btn}>
-                  <BiDownload size={'15px'} />
-                  &nbsp; Deploy
-                </button>
-              </a>
-            </Link>
-            <Link href={github}>
-              <a target='_blank'>
-                <button className={`${styles.btn} ${styles.btnGithub}`}>
-                  <FaGithub size={'15px'} />
-                  &nbsp; Code
-                </button>
-              </a>
-            </Link>
+            <div className={styles.btnContainer}>
+              <Link href={url}>
+                <a target='_blank'>
+                  <button className={styles.btn}>
+                    <BiDownload size={'15px'} />
+                    &nbsp; Deploy
+                  </button>
+                </a>
+              </Link>
+              <Link href={github}>
+                <a target='_blank'>
+                  <button className={`${styles.btn} ${styles.btnGithub}`}>
+                    <FaGithub size={'15px'} />
+                    &nbsp; Code
+                  </button>
+                </a>
+              </Link>
+            </div>
           </>
         )
       )}

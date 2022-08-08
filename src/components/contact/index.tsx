@@ -17,10 +17,6 @@ interface IValidation {
     error: string;
     valid: boolean;
   };
-  company: {
-    error: string;
-    valid: boolean;
-  };
   email: {
     error: string;
     valid: boolean;
@@ -36,7 +32,6 @@ const Contact: React.FC<Props> = ({ keys }) => {
 
   const [form, setForm] = useState<any>({
     fullName: '',
-    company: '',
     email: '',
     message: '',
   });
@@ -50,16 +45,9 @@ const Contact: React.FC<Props> = ({ keys }) => {
       required: true,
       errorMessage: `Full name should be 3-16 characters and should't use special characters`,
     },
+
     {
       id: 2,
-      name: 'company',
-      label: 'Company',
-      type: 'text',
-      required: true,
-      errorMessage: `Full name should be 3-16 characters and should't use special characters`,
-    },
-    {
-      id: 3,
       name: 'email',
       label: 'Email',
       type: 'text',
@@ -67,7 +55,7 @@ const Contact: React.FC<Props> = ({ keys }) => {
       errorMessage: 'It should be a valid email address!',
     },
     {
-      id: 4,
+      id: 3,
       name: 'message',
       label: 'Message',
       type: 'textarea',
@@ -111,7 +99,6 @@ const Contact: React.FC<Props> = ({ keys }) => {
   const templateParams = {
     fullName: form.fullName,
     company: form.company,
-    email: form.email,
     message: form.message,
   };
 
