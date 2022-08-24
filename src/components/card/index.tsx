@@ -6,6 +6,7 @@ import Rubrit from '../../assets/images/landing.jpg';
 import styles from './Card.module.css';
 import imageRubrit from '/public/landing.jpg';
 interface IProject {
+  id: number;
   title: string;
   img: any;
   description: string;
@@ -14,9 +15,20 @@ interface IProject {
   github: string;
 }
 
-const projects: [IProject] = [
+const projects: IProject[]= [
   {
+    id: 1,
     title: 'RUBRIT - Services App',
+    img: imageRubrit,
+    description:
+      'Rubrit was born from the need for those people to offer their services in an area where formal work is scarce. We seek to provide ease to all users who want to offer or hire reliable services.',
+    technologies: ['TypeScript', 'NextJS', 'MongoDB', 'AWS'],
+    url: 'https://github.com/bancalarisantiago/Rubrit-App',
+    github: 'https://github.com/bancalarisantiago/Rubrit-App',
+  },
+  {
+    id: 2,
+    title: 'VIDEO GAMES - DB api',
     img: imageRubrit,
     description:
       'Rubrit was born from the need for those people to offer their services in an area where formal work is scarce. We seek to provide ease to all users who want to offer or hire reliable services.',
@@ -28,10 +40,11 @@ const projects: [IProject] = [
 
 const Card: React.FC = () => (
   <div className={styles.container}>
-    <div className={styles.content}>
+    
       {projects.map(
-        ({ title, img, description, technologies, url, github }) => (
-          <>
+        ({ id, title, img, description, technologies, url, github }) => (
+        
+          <div key={id} className={styles.content}>
             <Image
               src={img}
               alt='project-picture'
@@ -68,11 +81,11 @@ const Card: React.FC = () => (
                 </a>
               </Link>
             </div>
-          </>
+            </div>
         )
       )}
     </div>
-  </div>
+  
 );
 
 export default Card;
