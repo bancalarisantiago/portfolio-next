@@ -3,7 +3,7 @@ import Footer from '../footer';
 import ParticlesBackground from '../particlesBackground';
 import { useEffect, useState } from 'react';
 import styles from './Layout.module.css';
-
+import { useTheme } from 'next-themes';
 import Head from 'next/head';
 
 interface props {
@@ -22,7 +22,8 @@ const Layout: React.FC<props> = ({ children, activeLink }) => {
   //   event.preventDefault();
   // });
   const loaded = useLoaded();
-
+  const { theme } = useTheme();
+  useEffect(()=>{},[theme])
   return (
     <>
       <Head>
@@ -35,7 +36,7 @@ const Layout: React.FC<props> = ({ children, activeLink }) => {
         ) : (
           <>
             <Header activeLink={activeLink} />
-            <ParticlesBackground />
+            <ParticlesBackground theme={theme} />
             {children}
             <Footer />
           </>
