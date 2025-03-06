@@ -1,5 +1,6 @@
 .icon {
   color: var(--color-text);
+  margin-right: 5px;
 }
 
 .icon:hover {
@@ -8,22 +9,36 @@
 }
 
 .btn {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: transparent;
-  cursor: pointer;
-  border: 1.5px solid transparent;
-}
-
-.btn span {
-  margin: 5px;
-  font-size: 1rem;
+  margin-inline: 10px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  height: 20px;
+  font-size: 8px;
+  font-weight: 600;
   font-family: 'Montserrat';
-  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  letter-spacing: 1px;
+  display: inline-flex;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-bg-layout);
 }
-
+.btn:active {
+  background-color: var(--color-primary-strong, 0.5);
+  color: var(--color-text);
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
 .btn:hover {
-  border: 1.5px solid var(--color-primary);
-  transition: 1s;
+  background-color: var(--color-primary-strong);
+  color: var(--color-bg-layout);
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
 }
